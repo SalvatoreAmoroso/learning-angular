@@ -1,8 +1,16 @@
 <div class="box-1">
+  <h1>Input/Output Binding</h1>
   Outer <br />
-  Inner Variable: {{ innerVar }}
+  Inner Variable: {{ innerVarFromOutside }}
   <app-input-output-inner
-    [passedVar]="innerVar"
+    [passedVar]="innerVarFromOutside"
     (changeEvent)="innerComponentChanged($event)"
+  ></app-input-output-inner>
+
+  <h1>Simpler Input/Output Binding (Two-Way)</h1>
+  Outer <br />
+  Inner Variable: {{ innerVarFromOutside }}
+  <app-input-output-inner
+    [(passedVar)]="innerVarFromOutside"
   ></app-input-output-inner>
 </div>

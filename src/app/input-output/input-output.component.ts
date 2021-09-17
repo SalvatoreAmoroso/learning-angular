@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-output.component.scss'],
 })
 export class InputOutputComponent implements OnInit {
-  innerVar: string = 'Zalli';
+  innerVarFromOutside: string = 'Zalli';
 
   constructor() {}
 
@@ -14,6 +14,6 @@ export class InputOutputComponent implements OnInit {
 
   innerComponentChanged(text: string) {
     console.log('Outer: My inner changed to ' + text);
-    this.innerVar = text;
+    this.innerVarFromOutside = text;
   }
 }

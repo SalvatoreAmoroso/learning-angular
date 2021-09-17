@@ -9,8 +9,12 @@ export class InputOutputInnerComponent implements OnInit {
   @Input() passedVar: string = '';
   @Output() changeEvent: EventEmitter<string>;
 
+  //Simpler Two Way Binding
+  @Output() passedVarChange: EventEmitter<string>;
+
   constructor() {
     this.changeEvent = new EventEmitter();
+    this.passedVarChange = new EventEmitter();
     //passedVar cannot be used here. Use ngOnInit instead.
   }
 
@@ -18,5 +22,6 @@ export class InputOutputInnerComponent implements OnInit {
 
   inputChanged(text: string) {
     this.changeEvent.emit(text);
+    this.passedVarChange.emit(text);
   }
 }
