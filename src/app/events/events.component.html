@@ -14,7 +14,7 @@
     <input
       type="text"
       [value]="color"
-      (change)="changeColor($any($event.target).value)"
+      (input)="changeColor($any($event.target).value)"
     />
     <p>You selected: {{ color }}</p>
   </div>
