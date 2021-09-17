@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './oneway-prop.component.html',
   styleUrls: ['./oneway-prop.component.scss']
 })
-export class ApplyCssComponent implements OnInit {
+export class OneWayPropComponent implements OnInit {
 
   checked : boolean = false
   color: string = "green"
