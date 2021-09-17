@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ApplyCssComponent } from './apply-css/appy-css.component';
+import { ApplyCssComponent as OneWayPropComponent } from './oneway-prop/oneway-prop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ApplyCssComponent
+    OneWayPropComponent,
   ],
   imports: [
     BrowserModule,

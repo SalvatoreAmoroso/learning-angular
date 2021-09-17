@@ -1,4 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+.box-1 {
+  border: 1px solid red;
+  margin: 5px;
+  padding: 5px;
+}
+
+.box-2 {
+  border: 1px solid blue;
+  margin: 5px;
+  padding: 5px;
+}
