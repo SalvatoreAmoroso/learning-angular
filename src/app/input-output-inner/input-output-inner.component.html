@@ -1,0 +1,8 @@
+<div class="box-2">
+  Inner <br />
+  <input
+    type="text"
+    (change)="inputChanged($any($event.target).value)"
+    [value]="passedVar"
+  />
+</div>

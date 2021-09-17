@@ -1,0 +1,8 @@
+<div class="box-1">
+  Outer <br />
+  Inner Variable: {{ innerVar }}
+  <app-input-output-inner
+    [passedVar]="innerVar"
+    (changeEvent)="innerComponentChanged($event)"
+  ></app-input-output-inner>
+</div>
