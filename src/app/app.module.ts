@@ -5,16 +5,19 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ApplyCssComponent as OneWayPropComponent } from './oneway-prop/oneway-prop.component';
 import { EventsComponent } from './events/events.component';
+import { TwowayComponent } from './twoway/twoway.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     OneWayPropComponent,
     EventsComponent,
+    TwowayComponent,
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
