@@ -1,0 +1,31 @@
+<div class="box-1">
+  <div class="box-2">
+    <h1>Event Binding</h1>
+    <button (click)="counter = counter + 1">+</button>
+    <p>{{ counter }}</p>
+    <button (click)="counter = counter - 1">-</button>
+  </div>
+
+  <div [style.background]="color" class="box-2">
+    <h1>$event-Objekt</h1>
+    <!-- Does not work?! <input type="text" [value]="color" (change)="changeColor($event.target.value)" /> -->
+    <!-- Solution: <input (keyup)="value2=$any($event.target).value" /> -->
+    <input
+      type="text"
+      [value]="color"
+      (change)="changeColor($any($event.target).value)"
+    />
+    <p>You entered: {{ color }}</p>
+  </div>
+
+  <div class="box-2">
+    <h1>KeyDown Events</h1>
+    <p>Counter: {{ counter }}</p>
+    <input
+      type="number"
+      [value]="counter"
+      (keydown.arrowup)="increment(); $event.preventDefault()"
+      (keydown.arrowdown)="decrement()"
+    />
+  </div>
+</div>
