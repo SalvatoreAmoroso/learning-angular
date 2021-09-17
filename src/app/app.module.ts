@@ -7,6 +7,7 @@ import { ApplyCssComponent as OneWayPropComponent } from './oneway-prop/oneway-p
 import { EventsComponent } from './events/events.component';
 import { TwowayComponent } from './twoway/twoway.component';
 import { FormsModule } from '@angular/forms';
+import { LocalvarComponent } from './localvar/localvar.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     OneWayPropComponent,
     EventsComponent,
     TwowayComponent,
+    LocalvarComponent,
   ],
   imports: [
     BrowserModule,
