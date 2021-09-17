@@ -10,12 +10,13 @@
     <h1>$event-Objekt</h1>
     <!-- Does not work?! <input type="text" [value]="color" (change)="changeColor($event.target.value)" /> -->
     <!-- Solution: <input (keyup)="value2=$any($event.target).value" /> -->
+    <p>Select a color:</p>
     <input
       type="text"
       [value]="color"
       (change)="changeColor($any($event.target).value)"
     />
-    <p>You entered: {{ color }}</p>
+    <p>You selected: {{ color }}</p>
   </div>
 
   <div class="box-2">
