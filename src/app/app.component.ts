@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'learning-angular';
+  name: string = "";
+  age: number = 0;
+  constructor() {
+    this.name = "Salvatore";
+    this.age = 12;
+  }
 }
