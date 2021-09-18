@@ -15,21 +15,18 @@ import {
 })
 export class IO1InnerComponent implements OnInit, OnChanges {
   @Input() passedVar: string = '';
-  @Output() changeEvent: EventEmitter<string>;
-
+  @Output() changeEvent: EventEmitter<string> = new EventEmitter();
   //Simpler Two Way Binding
-  @Output() passedVarChange: EventEmitter<string>;
+  @Output() passedVarChange: EventEmitter<string> = new EventEmitter();
 
   constructor() {
-    this.changeEvent = new EventEmitter();
-    this.passedVarChange = new EventEmitter();
     //passedVar cannot be used here. Use ngOnInit instead.
   }
 
   ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('Input data has changed:\n' + changes);
+    console.log(changes);
   }
 
   inputChanged(text: string) {
