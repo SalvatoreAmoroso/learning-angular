@@ -1,16 +1,26 @@
 <div class="box-1">
-  <h1>Input/Output Binding</h1>
-  Outer <br />
-  Inner Variable: {{ innerVarFromOutside }}
-  <app-input-output-inner
-    [passedVar]="innerVarFromOutside"
-    (changeEvent)="innerComponentChanged($event)"
-  ></app-input-output-inner>
+  <div class="box-2">
+    <h1>Input/Output Binding</h1>
+    Inner Variable (from outside): {{ innerVarFromOutside }}
+    <app-input-output-inner
+      [passedVar]="innerVarFromOutside"
+      (changeEvent)="innerComponentChanged($event)"
+    ></app-input-output-inner>
+  </div>
 
-  <h1>Simpler Input/Output Binding (Two-Way)</h1>
-  Outer <br />
-  Inner Variable: {{ innerVarFromOutside }}
-  <app-input-output-inner
-    [(passedVar)]="innerVarFromOutside"
-  ></app-input-output-inner>
+  <div class="box-2">
+    <h1>Input/Output Binding (Syntax Sugar)</h1>
+    Inner Variable (from outside): {{ innerVarFromOutside }}
+    <app-input-output-inner
+      [(passedVar)]="innerVarFromOutside"
+      #test
+    ></app-input-output-inner>
+
+    <h3>Bind with ngModel</h3>
+    Inner var (from outside with ngModel): <br />
+    <input type="text" [(ngModel)]="innerVarFromOutside" />
+
+    <h3>Access Child API with local var</h3>
+    <button (click)="test.reset()">reset</button>
+  </div>
 </div>
