@@ -8,8 +8,8 @@ import { TwowayComponent } from './twoway/twoway.component';
 import { FormsModule } from '@angular/forms';
 import { LocalvarComponent } from './localvar/localvar.component';
 import { MicrosyntaxComponent } from './microsyntax/microsyntax.component';
-import { IO1Component } from './io-1/io-1.component';
-import { IO1InnerComponent } from './io-1-inner/io-1-inner.component';
+import { IO1Component } from './io1/io1.component';
+import { IO1InnerComponent } from './io1-inner/io1-inner.component';
 
 @NgModule({
   declarations: [

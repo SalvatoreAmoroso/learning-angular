@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-io1',
-  templateUrl: './io-1.component.html',
-  styleUrls: ['./io-1.component.scss'],
+  templateUrl: './io1.component.html',
+  styleUrls: ['./io1.component.scss'],
 })
 export class IO1Component implements OnInit {
   innerVarFromOutside: string = 'Zalli';

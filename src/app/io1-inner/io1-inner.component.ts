@@ -10,8 +10,8 @@ import {
 
 @Component({
   selector: 'app-io1-inner',
-  templateUrl: './io-1-inner.component.html',
-  styleUrls: ['./io-1-inner.component.scss'],
+  templateUrl: './io1-inner.component.html',
+  styleUrls: ['./io1-inner.component.scss'],
 })
 export class IO1InnerComponent implements OnInit, OnChanges {
   @Input() passedVar: string = '';

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IO1InnerComponent } from './io-1-inner.component';
+import { IO1InnerComponent } from './io1-inner.component';
 
 describe('InputOutputInnerComponent', () => {
   let component: IO1InnerComponent;
