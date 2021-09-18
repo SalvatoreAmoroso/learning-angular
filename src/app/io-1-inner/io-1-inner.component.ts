@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-input-output-inner',
+  selector: 'app-io1-inner',
   templateUrl: './io-1-inner.component.html',
   styleUrls: ['./io-1-inner.component.scss'],
 })

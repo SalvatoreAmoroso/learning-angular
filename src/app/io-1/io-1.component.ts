@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-input-output',
+  selector: 'app-io1',
   templateUrl: './io-1.component.html',
   styleUrls: ['./io-1.component.scss'],
 })
