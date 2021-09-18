@@ -25,9 +25,7 @@ export class IO1InnerComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-  }
+  ngOnChanges(changes: SimpleChanges): void {}
 
   inputChanged(text: string) {
     this.emitChanges(text);
