@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputOutputComponent } from './input-output.component';
+import { IO1Component } from './io-1.component';
 
 describe('InputOutputComponent', () => {
-  let component: InputOutputComponent;
-  let fixture: ComponentFixture<InputOutputComponent>;
+  let component: IO1Component;
+  let fixture: ComponentFixture<IO1Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InputOutputComponent ]
-    })
-    .compileComponents();
+      declarations: [IO1Component],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InputOutputComponent);
+    fixture = TestBed.createComponent(IO1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -8,8 +8,8 @@ import { TwowayComponent } from './twoway/twoway.component';
 import { FormsModule } from '@angular/forms';
 import { LocalvarComponent } from './localvar/localvar.component';
 import { MicrosyntaxComponent } from './microsyntax/microsyntax.component';
-import { InputOutputComponent } from './input-output/input-output.component';
-import { InputOutputInnerComponent } from './input-output-inner/input-output-inner.component';
+import { IO1Component } from './io-1/io-1.component';
+import { IO1InnerComponent } from './io-1-inner/io-1-inner.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +19,11 @@ import { InputOutputInnerComponent } from './input-output-inner/input-output-inn
     TwowayComponent,
     LocalvarComponent,
     MicrosyntaxComponent,
-    InputOutputComponent,
-    InputOutputInnerComponent,
+    IO1Component,
+    IO1InnerComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

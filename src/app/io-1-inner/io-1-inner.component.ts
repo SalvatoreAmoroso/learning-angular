@@ -10,10 +10,10 @@ import {
 
 @Component({
   selector: 'app-input-output-inner',
-  templateUrl: './input-output-inner.component.html',
-  styleUrls: ['./input-output-inner.component.scss'],
+  templateUrl: './io-1-inner.component.html',
+  styleUrls: ['./io-1-inner.component.scss'],
 })
-export class InputOutputInnerComponent implements OnInit, OnChanges {
+export class IO1InnerComponent implements OnInit, OnChanges {
   @Input() passedVar: string = '';
   @Output() changeEvent: EventEmitter<string>;
 
