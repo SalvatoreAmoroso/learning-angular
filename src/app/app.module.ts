@@ -12,7 +12,6 @@ import { IO1Component } from './io1/io1.component';
 import { IO1InnerComponent } from './io1-inner/io1-inner.component';
 import { Io2Component } from './io2/io2.component';
 import { Io2InnerComponent } from './io2-inner/io2-inner.component';
-import { CiContentchildrenComponent } from './contentinsertion/ci-contentchildren/ci-contentchildren.component';
 import { PanelModule } from './contentinsertion/panel.module';
 import { TabModule } from './contentinsertion/tabs/tab.module';
 
@@ -28,7 +27,6 @@ import { TabModule } from './contentinsertion/tabs/tab.module';
     IO1InnerComponent,
     Io2Component,
     Io2InnerComponent,
-    CiContentchildrenComponent,
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule],
   providers: [],
