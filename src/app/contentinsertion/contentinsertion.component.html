@@ -1,0 +1,40 @@
+<div class="box-1">
+  <h1>Content Insertion</h1>
+  <aside>
+    Randinfo: Da es sich hier um insgesamt 3 zusammengehörige Komponenten und
+    eine Direktive handelt, wurden diese in ein eigenes Modul namens PanelModule
+    ausgelagert. Dieses Modul wird in der app.module.ts importiert.
+  </aside>
+  <div class="box-2">
+    <h2>ngContent</h2>
+    <app-ci-single title="Das ist der Titel (klick mich)">
+      Und das der Text
+    </app-ci-single>
+  </div>
+
+  <div class="box-2">
+    <h2>ngContent mit mehreren Insertion Points</h2>
+    <p>
+      Statt per Input Binding wird der Titel hier auch per Insertion Point
+      übergeben (ermöglicht auch eigene Formatierung)
+    </p>
+    <app-ci-mutiple>
+      <!-- In Angular muss es für jeden eigenen Tag eine Komponente geben.
+    Da in diesem Fall kein Template nötig ist, reicht eine Direktive. -->
+      <zallisPanel>
+        <i>Das ist der Titel mit Formatierung (klick mich)</i>
+      </zallisPanel>
+      Und das der Text
+    </app-ci-mutiple>
+  </div>
+
+  <div class="box-2">
+    <h2>Tabs</h2>
+    <app-tabs>
+      <app-tab title="Tab 1"> Inhalt Tab 1 </app-tab>
+      <app-tab title="Tab 2"> Inhalt Tab 2 </app-tab>
+      <app-tab title="Tab 3"> Inhalt Tab 3 </app-tab>
+      <app-tab title="Tab 4"> Inhalt Tab 4 </app-tab>
+    </app-tabs>
+  </div>
+</div>
