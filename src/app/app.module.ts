@@ -16,6 +16,8 @@ import { PanelModule } from './contentinsertion/panel.module';
 import { TabModule } from './contentinsertion/tabs/tab.module';
 import { DirectivesComponent } from './directives/directives.component';
 import { BorderDirective } from './directives/border.directive';
+import { LowerCaseDirectiveDirective } from './directives/lower-case-directive.directive';
+import { SliderDirectiveDirective } from './directives/slider-directive.directive';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { BorderDirective } from './directives/border.directive';
     Io2InnerComponent,
     DirectivesComponent,
     BorderDirective,
+    LowerCaseDirectiveDirective,
+    SliderDirectiveDirective,
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule],
   providers: [],
