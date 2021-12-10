@@ -1,0 +1,16 @@
+<div class="box-1">
+    <h1>Direktiven</h1>
+    <div class="box-2">
+      <h2>ElementRef und Renderer2 (Manipulation  von DOM Eigenschaften)</h2>
+      <div chBorder="2">
+          Ich habe einen festen Rahmen von einer Direktive gesetzt bekommen.
+      </div>
+      <br>
+      <div [chBorder]="borderWidth">
+        Ich habe einen dynamischen Rahmen von einer Direktive gesetzt bekommen (Breite: {{borderWidth}}).
+      </div>
+      <button (click)="borderWidth = borderWidth + 1">Rahmen verbreitern</button>
+      <br>
+    </div>
+
+</div>

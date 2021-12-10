@@ -14,6 +14,8 @@ import { Io2Component } from './io2/io2.component';
 import { Io2InnerComponent } from './io2-inner/io2-inner.component';
 import { PanelModule } from './contentinsertion/panel.module';
 import { TabModule } from './contentinsertion/tabs/tab.module';
+import { DirectivesComponent } from './directives/directives.component';
+import { BorderDirective } from './directives/border.directive';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { TabModule } from './contentinsertion/tabs/tab.module';
     IO1InnerComponent,
     Io2Component,
     Io2InnerComponent,
+    DirectivesComponent,
+    BorderDirective,
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule],
   providers: [],
