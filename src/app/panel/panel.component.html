@@ -1,0 +1,9 @@
+<div class="panel">
+    <div class="header" (click)="togglePanel()">
+        {{title}}
+        <span class="arrow">{{ open ? '&#9660;' : '&#9668;'}}</span>
+    </div>
+    <div *ngIf="open" class="body">
+        <ng-content></ng-content>
+    </div>
+</div>

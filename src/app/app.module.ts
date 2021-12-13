@@ -18,6 +18,9 @@ import { DirectivesComponent } from './directives/directives.component';
 import { BorderDirective } from './directives/border.directive';
 import { LowerCaseDirectiveDirective } from './directives/lower-case-directive.directive';
 import { SliderDirectiveDirective } from './directives/slider-directive.directive';
+import { PanelComponent } from './panel/panel.component';
+import { AccordionDirective } from './panel/accordion.directive';
+import { PanelDemoComponent } from './panel-demo/panel-demo.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +38,12 @@ import { SliderDirectiveDirective } from './directives/slider-directive.directiv
     BorderDirective,
     LowerCaseDirectiveDirective,
     SliderDirectiveDirective,
+    PanelComponent,
+    AccordionDirective,
+    PanelDemoComponent,
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,0 +1,26 @@
+<div class="box-1">
+    <h1>Panels</h1>
+
+    <div class="box-2">
+        <h2>Ein einziges Panel mit ngContent (siehe oben: Content Insertion - ngContent)</h2>
+        <aside>Dieser Bereich implementiert dasselbe, wie unter Content Insertion - ngContent. Dieses Panel wurde
+            lediglich mit CSS erweitert.</aside>
+        <ch-panel title="Das ist der Titel">
+            Das ist der Content
+        </ch-panel>
+    </div>
+
+    <div class="box-2">
+        <h2>Panels mit der Accordion Direktive</h2>
+        <aside>Die Accordion Direktive erweitert die Panels um zusätzliches Verhalten.</aside>
+        <div class="accordion" chAccordion [onlyOneOpen]="true">
+            <ch-panel title="Das ist der Titel 1">
+                Das ist der Content 1
+            </ch-panel>
+            <ch-panel title="Das ist der Titel 2">
+                Das ist der Content 2
+            </ch-panel>
+        </div>
+    </div>
+
+</div>
