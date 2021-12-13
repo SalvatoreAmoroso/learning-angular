@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OneWayPropComponent implements OnInit {
 
-  checked : boolean = false
-  color: string = "green"
+  checked: boolean = false
+  color: string = "#9cc5a1"
 
   constructor() {
   }
