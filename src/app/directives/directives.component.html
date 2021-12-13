@@ -2,6 +2,15 @@
 
   <h1>Direktiven</h1>
 
+  <aside>
+    Direktiven erweitern die Anwendung um Verhalten. Typische Anwendungsfälle:
+    <ul>
+      <li>Veränderung von Host Eigenschaften</li>
+      <li>Integration von Fremdbibliotheken</li>
+      <li>Steuerung von anderen Komponenten</li>
+    </ul>
+  </aside>
+
   <div class="box-2">
     <h2>ElementRef und Renderer2 (Manipulation von DOM Eigenschaften)</h2>
     <div chBorder="2">
@@ -35,4 +44,6 @@
     <input type="number" [(ngModel)]="sliderValue">
     <p>Der aktuelle Wert des Sliders ist: {{sliderValue}}</p>
   </div>
+
+  <app-panel-demo></app-panel-demo>
 </div>
