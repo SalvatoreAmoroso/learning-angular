@@ -13,10 +13,16 @@ $quintaryColor: #dce1de;
   border: 1px solid $primaryColor;
   margin: 5px;
   padding: 5px;
+  background-color: $tertiaryColor;
 }
 
 .box-2 {
   border: 1px solid $secondaryColor;
   margin: 5px;
   padding: 5px;
+  background-color: $quaternaryColor;
+}
+
+body {
+  background-color: $quintaryColor;
 }
