@@ -22,6 +22,7 @@ import { PanelComponent } from './panel/panel.component';
 import { AccordionDirective } from './panel/accordion.directive';
 import { PanelDemoComponent } from './panel-demo/panel-demo.component';
 import { ViewEncapsulationComponent } from './advanced/view-encapsulation/view-encapsulation.component';
+import { TemplateRefAndNgTemplateOutletComponent } from './advanced/template-ref-and-ng-template-outlet/template-ref-and-ng-template-outlet.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ViewEncapsulationComponent } from './advanced/view-encapsulation/view-e
     AccordionDirective,
     PanelDemoComponent,
     ViewEncapsulationComponent,
+    TemplateRefAndNgTemplateOutletComponent,
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule],
   providers: [],
