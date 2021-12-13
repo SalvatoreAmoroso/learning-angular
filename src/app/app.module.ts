@@ -21,6 +21,7 @@ import { SliderDirectiveDirective } from './directives/slider-directive.directiv
 import { PanelComponent } from './panel/panel.component';
 import { AccordionDirective } from './panel/accordion.directive';
 import { PanelDemoComponent } from './panel-demo/panel-demo.component';
+import { ViewEncapsulationComponent } from './advanced/view-encapsulation/view-encapsulation.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { PanelDemoComponent } from './panel-demo/panel-demo.component';
     PanelComponent,
     AccordionDirective,
     PanelDemoComponent,
+    ViewEncapsulationComponent,
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule],
   providers: [],
