@@ -25,6 +25,8 @@ import { ViewEncapsulationComponent } from './advanced/view-encapsulation/view-e
 import { TemplateRefComponent } from './advanced/template-ref/template-ref.component';
 import { TemplateRefDemoComponent } from './advanced/template-ref/template-ref-demo/template-ref-demo.component';
 import { ViewContainerRefComponent, CircleComponent } from './advanced/view-container-ref/view-container-ref.component';
+import { RepeaterDirective } from './advanced/repeater-demo/repeater.directive';
+import { RepeaterDemoComponent } from './advanced/repeater-demo/repeater-demo.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { ViewContainerRefComponent, CircleComponent } from './advanced/view-cont
     TemplateRefComponent,
     TemplateRefDemoComponent,
     ViewContainerRefComponent,
-    CircleComponent
+    CircleComponent,
+    RepeaterDirective,
+    RepeaterDemoComponent
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule],
   providers: [],
