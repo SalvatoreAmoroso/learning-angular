@@ -12,7 +12,11 @@ export class RepeaterDirective {
   @Input("chRepeater") set repeatIt(count: number) {
     this.container.clear();
     for (let index = 0; index < count; index++) {
-      this.container.createEmbeddedView(this.template)
+      this.container.createEmbeddedView(this.template, {
+        myArgs: {
+          forIndex: index
+        }
+      })
     }
   }
 

@@ -3,9 +3,9 @@
         <h2>Create embedded view several times</h2>
         <input type="number" [(ngModel)]="repeatCnt" placeholder="Enter a number...">
 
-        <ng-template [chRepeater]="repeatCnt">
+        <ng-template [chRepeater]="repeatCnt" let-args="myArgs">
             <div>
-                <i>Ich werde wiederholt!</i>
+                <i>Ich werde wiederholt! ({{args.forIndex}})</i>
             </div>
         </ng-template>
     </div>
