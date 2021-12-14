@@ -24,6 +24,7 @@ import { PanelDemoComponent } from './panel-demo/panel-demo.component';
 import { ViewEncapsulationComponent } from './advanced/view-encapsulation/view-encapsulation.component';
 import { TemplateRefComponent } from './advanced/template-ref/template-ref.component';
 import { TemplateRefDemoComponent } from './advanced/template-ref/template-ref-demo/template-ref-demo.component';
+import { ViewContainerRefComponent, CircleComponent } from './advanced/view-container-ref/view-container-ref.component';
 
 @NgModule({
   declarations: [
@@ -47,9 +48,11 @@ import { TemplateRefDemoComponent } from './advanced/template-ref/template-ref-d
     ViewEncapsulationComponent,
     TemplateRefComponent,
     TemplateRefDemoComponent,
+    ViewContainerRefComponent,
+    CircleComponent
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
