@@ -13,13 +13,17 @@
 
     <div class="box-2">
 
-        <h2>Tempalte Ref with custom template</h2>
+        <h2>Template Ref with custom template</h2>
         <aside>Die TemplateRefComponent verwendet in ihrer html Datei das übergebene Template (über ngTemplate), wenn es
             vorhanden ist.</aside>
 
         <app-template-ref [entries]="entries">
-            <ng-template let-person>
+            <ng-template let-person #entryTemplate>
                 {{person.name}} <br>
+            </ng-template>
+
+            <ng-template #additionalTemplate>
+                Number of persons: {{entries.length}}
             </ng-template>
         </app-template-ref>
 

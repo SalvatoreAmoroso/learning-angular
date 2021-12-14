@@ -8,7 +8,8 @@ import { Component, ContentChild, Input, OnInit, TemplateRef } from '@angular/co
 export class TemplateRefComponent {
 
   @Input() entries: any[];
-  @ContentChild(TemplateRef) entryTemplate: TemplateRef<any>;
+  @ContentChild("entryTemplate") entryTemplate: TemplateRef<any>;
+  @ContentChild("additionalTemplate") additionalTemplate: TemplateRef<any>;
 
   hasCustomTemplate: boolean;
 

@@ -1,4 +1,7 @@
-<div class="box-1">
+<div class="box-2">
+
+    <h3>ngForTemplate</h3>
+
     <div *ngIf="!hasCustomTemplate">
         <div *ngFor="let person of entries">
             {{person.name}} ({{person.age}})
@@ -8,4 +11,12 @@
     <div *ngIf="hasCustomTemplate">
         <ng-template [ngForTemplate]="entryTemplate" ngFor [ngForOf]="entries"></ng-template>
     </div>
+</div>
+
+<div class="box-2">
+    <h3>ngTemplateOutlet</h3>
+    <aside>Hier kann ein zusätzliches Template übergeben werden. Damit lässt sich das Template praktisch erweitern:
+    </aside>
+
+    <ng-template [ngTemplateOutlet]="additionalTemplate"></ng-template>
 </div>
