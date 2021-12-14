@@ -17,8 +17,19 @@ export class ViewContainerRefComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.container.createComponent(this.circleFactory);
-    this.container.createComponent(this.circleFactory);
+    this.addCircle("green")
+    this.addCircle("white")
+    this.addCircle("red")
+  }
+
+
+  addCircle(color: string): void {
+    this.addCircleOnPosition(color, this.container.length)
+  }
+
+  addCircleOnPosition(color: string, index: number): void {
+    const circleRef = this.container.createComponent(this.circleFactory, index)
+    circleRef.instance.color = color
   }
 }
 
