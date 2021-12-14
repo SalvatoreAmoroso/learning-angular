@@ -1,5 +1,22 @@
 <div class="box-1">
-    <h1>Dynamically create components</h1>
-    <aside>The following circles are created at runtime:</aside>
-    <div #container></div>
+
+    <div class="box-2">
+        <h2>Dynamically create components</h2>
+        <aside>The following circles are created at runtime:</aside>
+        <div #container></div>
+
+    </div>
+
+    <div class="box-2">
+        <h2>ngComponentOutlet</h2>
+        <aside>Erstellt auch eine Komponente dynamisch anhand einer Variable.
+            Der Vorteil ist hier, dass die Komponente, die gerendert wird, zur Laufzeit ausgetauscht werden kann.
+        </aside>
+
+        <!-- Das fügt ch-circle dynamisch ein -->
+        <div *ngComponentOutlet="renderComponent"></div>
+
+        <br>
+        <button (click)="changeComponentClass()">Komponente ändern, welche gerendert werden soll</button>
+    </div>
 </div>

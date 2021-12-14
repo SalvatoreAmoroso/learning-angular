@@ -24,7 +24,7 @@ import { PanelDemoComponent } from './panel-demo/panel-demo.component';
 import { ViewEncapsulationComponent } from './advanced/view-encapsulation/view-encapsulation.component';
 import { TemplateRefComponent } from './advanced/template-ref/template-ref.component';
 import { TemplateRefDemoComponent } from './advanced/template-ref/template-ref-demo/template-ref-demo.component';
-import { ViewContainerRefComponent, CircleComponent } from './advanced/view-container-ref/view-container-ref.component';
+import { ViewContainerRefComponent, CircleComponent, SquareComponent } from './advanced/view-container-ref/view-container-ref.component';
 import { RepeaterDirective } from './advanced/repeater-demo/repeater.directive';
 import { RepeaterDemoComponent } from './advanced/repeater-demo/repeater-demo.component';
 
@@ -52,6 +52,7 @@ import { RepeaterDemoComponent } from './advanced/repeater-demo/repeater-demo.co
     TemplateRefDemoComponent,
     ViewContainerRefComponent,
     CircleComponent,
+    SquareComponent,
     RepeaterDirective,
     RepeaterDemoComponent
   ],

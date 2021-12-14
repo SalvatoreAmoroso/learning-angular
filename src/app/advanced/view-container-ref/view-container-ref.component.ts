@@ -12,6 +12,9 @@ export class ViewContainerRefComponent implements AfterViewInit {
 
   circleFactory: ComponentFactory<CircleComponent>;
 
+  renderComponent = CircleComponent
+
+
   constructor(private resolver: ComponentFactoryResolver) {
     this.circleFactory = resolver.resolveComponentFactory(CircleComponent);
   }
@@ -31,6 +34,10 @@ export class ViewContainerRefComponent implements AfterViewInit {
     const circleRef = this.container.createComponent(this.circleFactory, index)
     circleRef.instance.color = color
   }
+
+  changeComponentClass(): void {
+    this.renderComponent = this.renderComponent === CircleComponent ? SquareComponent : CircleComponent;
+  }
 }
 
 
@@ -49,6 +56,27 @@ export class ViewContainerRefComponent implements AfterViewInit {
   `]
 })
 export class CircleComponent {
+
+  @Input() color: string = "black";
+
+  constructor() { }
+}
+
+@Component({
+  selector: 'ch-circle',
+  template: `<div [ngStyle]="{'background-color' : color}"></div>`,
+  styles: [`
+     div {
+       border-radius: 1%;
+       border: 1px solid black;
+       width: 40px;
+       height: 40px;
+       display: inline-block;
+       margin: 3px;
+     }
+  `]
+})
+export class SquareComponent {
 
   @Input() color: string = "black";
 
