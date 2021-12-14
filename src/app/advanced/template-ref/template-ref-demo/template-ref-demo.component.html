@@ -1,0 +1,28 @@
+<div class="box-1">
+
+    <div class="box-2">
+
+        <h2>Template Ref with default template</h2>
+        <aside>Die TemplateRefComponent definiert in ihrer html Datei ein eigenes Template. Wird kein Template über
+            ngTemplate übergeben, so wird das default template gerendert.
+        </aside>
+
+        <app-template-ref [entries]="entries"></app-template-ref>
+
+    </div>
+
+    <div class="box-2">
+
+        <h2>Tempalte Ref with custom template</h2>
+        <aside>Die TemplateRefComponent verwendet in ihrer html Datei das übergebene Template (über ngTemplate), wenn es
+            vorhanden ist.</aside>
+
+        <app-template-ref [entries]="entries">
+            <ng-template let-person>
+                {{person.name}} <br>
+            </ng-template>
+        </app-template-ref>
+
+    </div>
+
+</div>

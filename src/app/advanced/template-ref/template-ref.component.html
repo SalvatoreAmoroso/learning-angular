@@ -1,0 +1,11 @@
+<div class="box-1">
+    <div *ngIf="!hasCustomTemplate">
+        <div *ngFor="let person of entries">
+            {{person.name}} ({{person.age}})
+        </div>
+    </div>
+
+    <div *ngIf="hasCustomTemplate">
+        <ng-template [ngForTemplate]="entryTemplate" ngFor [ngForOf]="entries"></ng-template>
+    </div>
+</div>
