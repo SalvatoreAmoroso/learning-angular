@@ -29,6 +29,8 @@ import { RepeaterDirective } from './advanced/repeater-demo/repeater.directive';
 import { RepeaterDemoComponent } from './advanced/repeater-demo/repeater-demo.component';
 import { ChangeDetectionPerformanceComponent, ContactListComponent, ContactEntryComponent } from './advanced/change-detection-performance/change-detection-performance.component';
 import { ChangeDetectionPerformanceOptimizedComponent, ContactListOptimizedComponent, ContactEntryOptimizedComponent } from './advanced/change-detection-performance-optimized/change-detection-performance-optimized.component';
+import { StandardDirectivesComponent } from './StandardFunctions/standard-directives/standard-directives.component';
+import { PipesComponent } from './StandardFunctions/pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { ChangeDetectionPerformanceOptimizedComponent, ContactListOptimizedCompo
     ContactEntryComponent,
     ChangeDetectionPerformanceOptimizedComponent,
     ContactListOptimizedComponent,
-    ContactEntryOptimizedComponent
+    ContactEntryOptimizedComponent,
+    StandardDirectivesComponent,
+    PipesComponent
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule],
   providers: [],
