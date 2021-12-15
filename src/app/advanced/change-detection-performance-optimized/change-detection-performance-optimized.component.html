@@ -1,0 +1,22 @@
+<div class="box-2">
+    <h2>Optimierte Performance</h2>
+    <aside>Durch ChangeDetectionStrategy.OnPush wird die ChangeDetection nur ausgelöst, wenn die
+        Input Variablen mit einem neuen Objekt beschrieben werden. Durch immutable Objekte werden die Daten (hier die
+        ContactList) also nicht direkt verändert (durch die OnPush Strategie würde die UI dann nicht automatisch
+        aktualisieren). Stattdessen wird das ContactList Objekt mit einem neuen Objekt beschrieben (neu "gepusht").
+    </aside>
+    <ch-contact-list-optimized [contacts]="contacts" (onSelect)="contactSelected($event)">
+    </ch-contact-list-optimized>
+    <h3>Kontakt bearbeiten</h3>
+    <form>
+        <label>Name</label>
+        <input type="text" name="name" [(ngModel)]="contactName">
+        <label>Anschrift</label>
+        <input type="text" name="address" [(ngModel)]="contactAddress">
+        <button (click)="editContact()">Speichern</button>
+        <button (click)="createContact()">Neu anlegen</button>
+    </form>
+
+    <aside>TODO: Warum wird hier auch die ngAfterViewChecked Methode von der nicht optimierten UI ausgeführt, auch wenn
+        die nicht optimierte UI gar nicht zu sehen ist?</aside>
+</div>

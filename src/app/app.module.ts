@@ -27,6 +27,8 @@ import { TemplateRefDemoComponent } from './advanced/template-ref/template-ref-d
 import { ViewContainerRefComponent, CircleComponent, SquareComponent } from './advanced/view-container-ref/view-container-ref.component';
 import { RepeaterDirective } from './advanced/repeater-demo/repeater.directive';
 import { RepeaterDemoComponent } from './advanced/repeater-demo/repeater-demo.component';
+import { ChangeDetectionPerformanceComponent, ContactListComponent, ContactEntryComponent } from './advanced/change-detection-performance/change-detection-performance.component';
+import { ChangeDetectionPerformanceOptimizedComponent, ContactListOptimizedComponent, ContactEntryOptimizedComponent } from './advanced/change-detection-performance-optimized/change-detection-performance-optimized.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,13 @@ import { RepeaterDemoComponent } from './advanced/repeater-demo/repeater-demo.co
     CircleComponent,
     SquareComponent,
     RepeaterDirective,
-    RepeaterDemoComponent
+    RepeaterDemoComponent,
+    ChangeDetectionPerformanceComponent,
+    ContactListComponent,
+    ContactEntryComponent,
+    ChangeDetectionPerformanceOptimizedComponent,
+    ContactListOptimizedComponent,
+    ContactEntryOptimizedComponent
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule],
   providers: [],
