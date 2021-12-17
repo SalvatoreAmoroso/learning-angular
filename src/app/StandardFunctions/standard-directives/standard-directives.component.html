@@ -1,1 +1,170 @@
-<p>standard-directives works!</p>
+<div class="box-1">
+    <h1>Standard Direktiven</h1>
+    <div class="box-2">
+        <h2>ngIf</h2>
+        <div *ngIf="isNice else notNice">
+            You can only see this if its nice
+        </div>
+
+        <ng-template #notNice>
+            <div>
+                You can only see this if its not nice
+            </div>
+        </ng-template>
+
+        <button (click)="isNice = !isNice">Toggle Nice</button>
+    </div>
+
+    <div class="box-2">
+        <h2>ngSwitch</h2>
+
+        <input type="number" [(ngModel)]="aNumber">
+
+        <p>The number is:</p>
+        <div [ngSwitch]="aNumber">
+            <div *ngSwitchCase="4">4</div>
+            <div *ngSwitchCase="5">5</div>
+            <div *ngSwitchCase="6">6</div>
+            <div *ngSwitchDefault>not 4, 5 or 6</div>
+        </div>
+    </div>
+
+
+    <div class="box-2">
+        <h2>ngClass</h2>
+
+        <div [ngClass]="{blackPlease: isBlack}">
+            This div can change its html class dynamically!
+        </div>
+
+        <button (click)="isBlack = !isBlack">Toggle class</button>
+
+        <hr>
+
+        <div [ngClass]="someClasses">
+            This div has a dynamic array as classes
+        </div>
+
+        <input type="text" #inputClass>
+        <button (click)="addClass(inputClass.value)">Add class to array</button>
+    </div>
+
+
+    <div class="box-2">
+        <h2>ngStyle</h2>
+
+        <aside>ngStyle fügt/entfernt im Vergleich zu ngClass keine Klassen, sondern verändert css Eigenschaften
+            dynamisch.</aside> <br>
+
+        <div [ngStyle]="{'font-style' : fontStyle, 'font-size': fontSize + 'px'}">
+            Ich bin ein gestylter Text
+        </div>
+
+        <div>Aktueller Style: {{fontStyle}}, aktuelle Schriftgröße: {{fontSize}}</div><br>
+
+        <button (click)="fontStyle = (fontStyle === 'italic') ? 'normal' : 'italic'">
+            Fontstyle verändern
+        </button>
+        <button (click)="fontSize = fontSize+1">
+            Schrift vergrößern
+        </button>
+    </div>
+
+    <div class="box-2">
+        <h2>ngFor</h2>
+
+        <div>
+            <h3>Simple ngFor</h3>
+            <ul>
+                <li *ngFor="let friend of friends">
+                    {{friend}}
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <h3>ngFor with index</h3>
+            <ul>
+                <li *ngFor="let friend of friends; let i = index">{{i + 1}} {{friend}}</li>
+            </ul>
+
+        </div>
+        <hr>
+        <div>
+            <h3>ngFor with odd/even</h3>
+            <table>
+                <thead>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Population</th>
+                </thead>
+                <tr *ngFor="let city of cities; let isEven=even; let isOdd=odd"
+                    [ngClass]="{'row-even': isEven, 'row-odd': isOdd}">
+
+                    <td>{{city.name}}</td>
+                    <td>{{city.country}}</td>
+                    <td>{{city.population}}</td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div>
+            <h3>ngFor with last</h3>
+
+            <span *ngFor="let friend of friends; let isLast=last">
+                <span>{{friend}}</span>
+                <span *ngIf="!isLast">, </span>
+            </span>
+            <br>
+            <br>
+            <input #friend type="text">
+            <button (click)="addFriend(friend.value)">Add Friend</button>
+        </div>
+        <hr>
+        <div>
+            <h3>NgFor ohne trackBy-Funktion</h3>
+            <aside>Hier wird jede Sekunde das Array mit neuen Werten erstellt. Durch Angular wird die Liste
+                automatisch neu gerendert, da sich das Model geändert hat. Ohne trackBy Funktion wird die gesamte
+                Tabelle neu gerendert.</aside>
+            <table>
+                <thead>
+                    <th>Player</th>
+                    <th>Score</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let player of players" class="fade-in">
+                        <td>{{player.name}}</td>
+                        <td>{{player.score}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h3>NgFor mit trackBy-Funktion </h3>
+            <aside>Da wir aber wissen, dass sich bei Neuerstellung des Arrays nur der Score ändert, können wir mit einer
+                trackBy Funktion Angular mitteilen, dass es nur die Scores neu rendern braucht (also "track by name").
+            </aside>
+            <table>
+                <thead>
+                    <th>Player</th>
+                    <th>Score</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let player of players; trackBy: playerTrackBy" class="fade-in">
+                        <td>{{player.name}}</td>
+                        <td class="fade-in">{{player.score}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="box-2">
+        <h2>ngNonBindable</h2>
+        <div ngNonBindable>
+            Zur Interpolation von Variablen können doppelte geschweifte Klammern
+            verwenden werden. Der Ausdruck:
+            <pre> {{title}} </pre>
+            würde also den Wert der title-Variablen an dieser Stelle darstellen.
+        </div>
+    </div>
+</div>
