@@ -31,6 +31,7 @@ import { ChangeDetectionPerformanceComponent, ContactListComponent, ContactEntry
 import { ChangeDetectionPerformanceOptimizedComponent, ContactListOptimizedComponent, ContactEntryOptimizedComponent } from './Advanced/change-detection-performance-optimized/change-detection-performance-optimized.component';
 import { StandardDirectivesComponent } from './StandardFunctions/standard-directives/standard-directives.component';
 import { PipesComponent } from './StandardFunctions/pipes/pipes.component';
+import { CentimeterPipe } from './StandardFunctions/pipes/centimeter.pipe';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { PipesComponent } from './StandardFunctions/pipes/pipes.component';
     ContactListOptimizedComponent,
     ContactEntryOptimizedComponent,
     StandardDirectivesComponent,
-    PipesComponent
+    PipesComponent,
+    CentimeterPipe
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule],
   providers: [],

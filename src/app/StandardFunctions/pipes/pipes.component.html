@@ -1,1 +1,132 @@
-<p>pipes works!</p>
+<div class="box-1">
+    <h1>Standard Pipes</h1>
+
+    <h2>Strings transformieren</h2>
+
+    <h3>Uppercase Pipe:</h3>
+
+    <h4>{{header | uppercase }}</h4>
+    <span>{{email | lowercase }}</span>
+
+    <hr>
+
+    <h2>Zahlen formatieren</h2>
+
+    <h3>Date Pipe:</h3>
+
+    <p><b>{{ currentDate | date }}</b></p>
+    <p><b>{{ currentDate | date:'shortDate' }}</b> (shortDate)</p>
+    <p><b>{{ currentDate | date:'mediumDate' }}</b> (mediumDate / default)</p>
+    <p><b>{{ currentDate | date:'longDate' }}</b> (longDate)</p>
+    <p><b>{{ currentDate | date:'fullDate' }}</b> (fullDate)</p>
+    <p><b>{{ currentDate | date:'shortTime' }}</b> (shortTime)</p>
+    <p><b>{{ currentDate | date:'mediumTime' }}</b> (mediumTime)</p>
+    <p><b>{{ currentDate | date:'short' }}</b> (short)</p>
+    <p><b>{{ currentDate | date:'medium' }}</b> (medium)</p>
+    <p><b>{{ currentDate | date:'long' }}</b> (long)</p>
+    <p><b>{{ currentDate | date:'full' }}</b> (full)</p>
+    <p><b>{{ currentDate | date:'dd.MM.y' }}</b> (dd.MM.y)</p>
+    <p><b>{{ currentDate | date:'HH:mm Z' }}</b> (HH:mm Z)</p>
+    <p><b>{{ currentDate | date:'HH:mm z' }}</b> (HH:mm z)</p>
+
+
+    <h4>DateString formatieren</h4>
+
+    <p><b>{{ dateString | date:'hh:mm a Z' }}</b> (hh:mm a Z)</p>
+    <p><b>{{ dateString | date:'hh:mm EEE EEEE Z' }}</b> (hh:mm EEE EEEE Z)</p>
+
+
+    <p><b>{{ dateString | date:'HH:mm:ss aa EEEE z G' }}</b> (HH:mm:ss aaaa EEEE z)</p>
+
+    {{ currentDate | date:'dd.MM.yyyy' }}
+
+
+
+    <h3>Decimal Pipe:</h3>
+
+    <h4>PI unformatiert:</h4>
+    <p>{{ pi }}</p>
+
+
+    <h4>PI formatiert:</h4>
+    <p>{{ pi | number:'1.1-5' }}</p>
+
+    <p>{{ pi | number:'2.1-2' }}</p>
+
+
+    <h3>Währung darstellen:</h3>
+
+    <p>{{price | currency:'EUR' }}</p>
+    <p>{{price | currency:'EUR':true:'2.2-2' }}</p>
+
+    <h4>Prozentzahlen formattieren:</h4>
+
+    <p>{{completed | percent}}</p>
+    <p>{{completed | percent:'.2'}}</p>
+    <p>{{completed | percent:'.3'}}</p>
+
+    <hr>
+
+    <h2>JSON Pipe:</h2>
+    <pre>{{currentUser | json}}</pre>
+    <pre>{{currentUser | json | lowercase}}</pre>
+
+    <hr>
+
+
+    <h2>Key-Value Pipe</h2>
+    <pre>{{currentUser | keyvalue:dontSort | json}}</pre>
+
+    <div *ngFor="let entry of currentUser | keyvalue:dontSort">
+        {{entry.key}}: {{entry.value}}
+    </div>
+
+
+    <h2>Asynchrone Daten darstellen</h2>
+
+    <h3>Promises</h3>
+    <p>{{promise | async}}</p>
+
+    <h3>Observables</h3>
+    <p>{{counter | async}}</p>
+
+    <hr>
+
+    <h2>Nur Teile eines Strings darstellen</h2>
+    <p>{{'Hello World' | slice:6 }}</p>
+
+    <h2>Nur Teile eines Arrays darstellen</h2>
+
+    <h4>Alle Werte ab dem 5. Wert darstellen</h4>
+    <ul>
+        <li *ngFor="let number of numbers | slice:5"> {{number}}</li>
+    </ul>
+
+    <h4>Nur die ersten 5 Werte darstellen</h4>
+    <ul>
+        <li *ngFor="let number of numbers | slice:0:5"> {{number}}</li>
+    </ul>
+
+    <h4>Die letzten 3 Werte darstellen</h4>
+    <ul>
+        <li *ngFor="let number of numbers | slice:-3"> {{number}}</li>
+    </ul>
+
+    <h4>Vom fünftletzten bis zum drittletzten Wert darstellen</h4>
+    <ul>
+        <li *ngFor="let number of numbers | slice:-5:-2"> {{number}}</li>
+    </ul>
+</div>
+
+<div class="box-1">
+    <h1>Custom Pipes</h1>
+
+    <div class="calculator">
+        <label> Geben Sie die Maßzahl in Inch ein: </label>
+        <input type="number" #inch>
+
+        <div *ngIf="inch.value">
+            {{inch.value}} inch ergeben <b>{{inch.value | cm:3}} cm</b>
+        </div>
+    </div>
+</div>
