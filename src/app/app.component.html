@@ -1,14 +1,18 @@
 <title>Learning Angular</title>
 
 <app-tabs>
-    <app-tab title="One Way Property Binding">
-        <app-oneway-prop></app-oneway-prop>
+    <app-tab title="Property Binding">
+        <app-tabs>
+            <app-tab title="One-Way">
+                <app-oneway-prop></app-oneway-prop>
+            </app-tab>
+            <app-tab title="Two-Way">
+                <app-twoway></app-twoway>
+            </app-tab>
+        </app-tabs>
     </app-tab>
     <app-tab title="Event Bindings">
         <app-events> </app-events>
-    </app-tab>
-    <app-tab title="Two Way Property Binding">
-        <app-twoway></app-twoway>
     </app-tab>
     <app-tab title="Misc">
         <app-localvar></app-localvar>
