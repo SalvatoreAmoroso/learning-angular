@@ -34,6 +34,7 @@ import { PipesComponent } from './StandardFunctions/pipes/pipes.component';
 import { CentimeterPipe } from './StandardFunctions/pipes/centimeter.pipe';
 import { PureVsImpurePipe } from './StandardFunctions/pipes/pure-vs-impure.pipe';
 import { DependencyInjectionModule } from './dependency-injection/dependency-injection.module';
+import { FormsExampleModule } from './Forms/forms-example.module';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,7 @@ import { DependencyInjectionModule } from './dependency-injection/dependency-inj
     CentimeterPipe,
     PureVsImpurePipe,
   ],
-  imports: [BrowserModule, FormsModule, PanelModule, TabModule, DependencyInjectionModule],
+  imports: [BrowserModule, FormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule],
   providers: [], //Define global services here as a singleton (RootInjector)
   bootstrap: [AppComponent]
 })
