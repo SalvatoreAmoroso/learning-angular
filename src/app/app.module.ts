@@ -33,6 +33,7 @@ import { StandardDirectivesComponent } from './StandardFunctions/standard-direct
 import { PipesComponent } from './StandardFunctions/pipes/pipes.component';
 import { CentimeterPipe } from './StandardFunctions/pipes/centimeter.pipe';
 import { PureVsImpurePipe } from './StandardFunctions/pipes/pure-vs-impure.pipe';
+import { DependencyInjectionModule } from './dependency-injection/dependency-injection.module';
 
 @NgModule({
   declarations: [
@@ -70,9 +71,9 @@ import { PureVsImpurePipe } from './StandardFunctions/pipes/pure-vs-impure.pipe'
     StandardDirectivesComponent,
     PipesComponent,
     CentimeterPipe,
-    PureVsImpurePipe
+    PureVsImpurePipe,
   ],
-  imports: [BrowserModule, FormsModule, PanelModule, TabModule],
+  imports: [BrowserModule, FormsModule, PanelModule, TabModule, DependencyInjectionModule],
   providers: [],
   bootstrap: [AppComponent]
 })
