@@ -1,0 +1,15 @@
+<div class="box-1">
+    <h1>Dependency Injection</h1>
+    <aside>The data comes from injected services.</aside>
+    <div class="box-2">
+        <h2>Global providers</h2>
+        <aside>This component uses a service which is defined in global space as a singleton (see app.module.ts)</aside>
+        <ul>
+            <li *ngFor="let friend of friends">
+                {{friend.name}} ({{friend.age}})
+            </li>
+        </ul>
+    </div>
+
+    <app-component-based-services></app-component-based-services>
+</div>

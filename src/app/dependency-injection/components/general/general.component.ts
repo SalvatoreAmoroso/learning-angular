@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from '../services/data-service.service';
+import { DataServiceOne } from '../../services/data-service.service';
 
 @Component({
   selector: 'di-general',
@@ -10,7 +10,7 @@ export class GeneralComponent {
 
   friends: any = [];
 
-  constructor(private dataService: DataService) { //dataService is injected here
+  constructor(private dataService: DataServiceOne) { //dataService is injected here. DataServiceOne is defined as a global provider
     this.friends = dataService.getFriends();
   }
 }

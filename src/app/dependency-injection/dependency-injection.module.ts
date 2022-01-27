@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GeneralComponent } from './general/general.component';
-import { DataService } from './services/data-service.service';
-
-
+import { GeneralComponent } from './components/general/general.component';
+import { DataServiceOne } from './services/data-service.service';
+import { ComponentBasedServicesComponent } from './components/component-based-services/component-based-services.component';
 
 @NgModule({
   declarations: [
-    GeneralComponent
+    GeneralComponent,
+    ComponentBasedServicesComponent,
   ],
   imports: [
     CommonModule
   ],
   providers: [
-    DataService //Define all providers for the di system
+    DataServiceOne //Define all providers for the di system
   ],
   exports: [
     GeneralComponent

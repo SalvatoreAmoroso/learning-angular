@@ -74,7 +74,7 @@ import { DependencyInjectionModule } from './dependency-injection/dependency-inj
     PureVsImpurePipe,
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule, DependencyInjectionModule],
-  providers: [],
+  providers: [], //Define global services here as a singleton (RootInjector)
   bootstrap: [AppComponent]
 })
 export class AppModule { }
