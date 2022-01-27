@@ -32,6 +32,7 @@ import { ChangeDetectionPerformanceOptimizedComponent, ContactListOptimizedCompo
 import { StandardDirectivesComponent } from './StandardFunctions/standard-directives/standard-directives.component';
 import { PipesComponent } from './StandardFunctions/pipes/pipes.component';
 import { CentimeterPipe } from './StandardFunctions/pipes/centimeter.pipe';
+import { PureVsImpurePipe } from './StandardFunctions/pipes/pure-vs-impure.pipe';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { CentimeterPipe } from './StandardFunctions/pipes/centimeter.pipe';
     ContactEntryOptimizedComponent,
     StandardDirectivesComponent,
     PipesComponent,
-    CentimeterPipe
+    CentimeterPipe,
+    PureVsImpurePipe
   ],
   imports: [BrowserModule, FormsModule, PanelModule, TabModule],
   providers: [],

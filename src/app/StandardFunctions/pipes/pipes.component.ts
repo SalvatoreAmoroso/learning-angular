@@ -9,6 +9,7 @@ import { timer } from 'rxjs';
 })
 export class PipesComponent implements OnInit {
 
+  message: string;
   deciPipe: DecimalPipe;
   currentDate = new Date();
 
@@ -55,5 +56,9 @@ export class PipesComponent implements OnInit {
 
   dontSort(a: any, b: any) {
     return 0;
+  }
+
+  addFriend(name: string) {
+    this.friends.push(name);
   }
 }

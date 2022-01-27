@@ -130,3 +130,34 @@
         </div>
     </div>
 </div>
+
+<div class="box-1">
+    <h1>Impure vs Pure Pipes</h1>
+
+    <div class="box-2">
+        <h2>Pure</h2>
+        <textarea [(ngModel)]="message" cols="30" rows="1"></textarea>
+
+        <br>Zeichen: {{message | count}}
+
+        <aside>Da strings immutable sind und sich das Objekt ändert, wenn ein neues Zeichen eingegeben wird, funktioniert diese Pipe ganz normal</aside>
+    </div>
+    <div class="box-2">
+        <h2>Impure</h2>
+        <ul>
+            <li *ngFor="let friend of friends">{{friend}}</li>
+        </ul>
+
+        <div>
+            Freund hinzufügen: <input type="text" #newFriend>
+            <button (click)="addFriend(newFriend.value)">Add friend</button>
+        </div>
+
+        <div>
+            Anzahl der Freunde: <b>{{friends | count}}</b>
+        </div>
+
+        <aside>Bei einer pure pipe würde der Counter nicht aktualisieren, wenn man ein Freund hinzufügt, da das Array Objekt immernoch dasselbe ist und lediglich ein neuer Wert in das Array kommt. Die Pipe muss als impure definiert werden.</aside>
+    </div>
+
+</div>
