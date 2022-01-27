@@ -2,7 +2,7 @@
     <h1>Dependency Injection</h1>
     <aside>The data comes from injected services.</aside>
     <div class="box-2">
-        <h2>Global providers</h2>
+        <h2>Global provider</h2>
         <aside>This component uses a service which is defined in global space as a singleton (see app.module.ts)</aside>
         <ul>
             <li *ngFor="let friend of friends">
@@ -12,4 +12,14 @@
     </div>
 
     <app-component-based-services></app-component-based-services>
+
+    <div class="box-2">
+        <h2>Treeshakable-Provider</h2>
+        <aside>The provider is defined in the service itself. No need to specify the service in app.module.ts.</aside>
+        <ul>
+            <li *ngFor="let friend of friendsThree">
+                {{friend.name}} ({{friend.age}})
+            </li>
+        </ul>
+    </div>
 </div>
