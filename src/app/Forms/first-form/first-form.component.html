@@ -1,19 +1,124 @@
-<form novalidate (ngSubmit)="saveTask(form.value)" #form="ngForm" class="w-25 m-2">
-  <div class="form-group">
-    <label>Titel*</label>
-    <input type="text" class="form-control" name="title" required ngModel #title="ngModel" />
-  </div>
+<div class="d-flex">
+  <form novalidate (ngSubmit)="saveTask(form.value)" #form="ngForm" class="w-25 m-2">
+    <aside>Das ngModel überträgt die Daten in das Model anhand des HTML name Attributs</aside>
+    <div class="box-2">
+      <h2>Text Felder</h2>
+      <div class="form-group">
+        <label>Titel*</label>
+        <input type="text" class="form-control" name="title" required [ngModel]="task.title" #title="ngModel" />
+      </div>
 
-  <div *ngIf="!title.valid && title.touched" class="alert alert-danger">
-    Bitte geben sie einen Titel an
-  </div>
+      <div *ngIf="!title.valid && title.touched" class="alert alert-danger">
+        Bitte geben sie einen Titel an
+      </div>
 
-  <div class="form-group">
-    <label>Beschreibung</label>
-    <textarea class="form-control" name="description" ngModel></textarea>
-  </div>
+      <div class="form-group">
+        <label>Beschreibung</label>
+        <textarea class="form-control" name="description" ngModel></textarea>
+      </div>
 
-  <button type="submit" class="btn btn-default" [disabled]="!form.valid">
-    Speichern
-  </button>
-</form>
+      <div class="form-group">
+        <label>One Way Binding</label>
+        <input type="text" class="form-control" name="oneway" [ngModel]="task.oneway" />
+      </div>
+
+      <div class="form-group">
+        <label>Two Way Binding</label>
+        <input type="text" class="form-control" name="twoway" [(ngModel)]="task.twoway" />
+      </div>
+    </div>
+
+    <aside>Für die nachfolgenden Steuerelemente wurde das One Property Bindung verwendet, damit die Defaultwerte übernommen werden (One-Way: Model -> UI). Um die Auswahl wiederrum in das Model zu übernehmen könnte man das Two Way Binding
+      verwenden. Bei Input Feldern kann das die Performance beeinträchtigen, da die ChangeDetection bei jedem Tastendruck neu durchlaufen wird. Statt des Two Way Bindings gibt es hier einen "Speichern" Button, welcher per Klick
+      die Daten manuell in das Model überträgt.</aside>
+    <div class="box-2">
+      <h2>Auswahllisten</h2>
+
+      <h4>Simpel</h4>
+      <select class="form-control" [ngModel]="task.state" name="state">
+        <option value="">--- Bitte auswählen ---</option>
+        <option *ngFor="let state of model.states">{{state}}</option>
+      </select>
+
+      <h4>ngValue</h4>
+      <aside>Mit NgValue können Listen Objekte zugeordnet werden.</aside>
+      <select name="state" [ngModel]="task.state" class="form-control">
+        <option value="">--- Bitte auswählen ---</option>
+        <option *ngFor="let state of model.statesAsObjects" [ngValue]="state">{{state.text}}</option>
+      </select>
+
+      <h4>Optionsgruppen</h4>
+      <select name="state" [ngModel]="task.state" class="form-control">
+        <optgroup *ngFor="let group of model.stateGroups" [label]="group.label">
+          <option *ngFor="let state of group.states" [value]="state">{{state}}</option>
+        </optgroup>
+      </select>
+    </div>
+
+
+    <div class="box-2">
+      <h2>Checkboxen</h2>
+      <label>
+        <input type="checkbox" name="favorite" [ngModel]="task.favorite">
+        Zu Favoriten hinzufügen
+      </label>
+    </div>
+
+    <div class="box-2">
+      <h2>Radio Buttons</h2>
+      <h4>Manuell die values definieren</h4>
+      <div class="radio">
+        <label>
+          <input type="radio" name="state" [ngModel]="task.state" value="BACKLOG">
+          Backlog
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="state" [ngModel]="task.state" value="IN_PROGRESS">
+          In Progress
+        </label>
+      </div>
+      <div>...</div>
+
+      <h4>Values dynamisch setzen</h4>
+      <div class="radio" *ngFor="let state of model.states">
+        <label>
+          <input type="radio" name="state" [ngModel]="task.state" [value]="state">
+          {{state}}
+        </label>
+      </div>
+    </div>
+
+    <div class="box-2">
+      <h2>Verschachtelte Eigenschaften (NgModelGroup)</h2>
+      <aside>Da wir im Model wiederrum ein weiteres Objekt speichern (User), muss dieser über ngModelGroup bekannt gemacht werden.</aside>
+      <h5>Zuständiger</h5>
+      <div ngModelGroup="assignee">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" class="form-control" [ngModel]="task.assignee.name">
+        </div>
+        <div class="form group">
+          <label>E-Mail</label>
+          <input type="text" name="email" class="form-control" [ngModel]="task.assignee.email">
+        </div>
+      </div>
+    </div>
+
+    <div class="box-1">
+      <button type="submit" class="btn btn-default" [disabled]="!form.valid">
+        Speichern
+      </button>
+
+      <button (click)="reset()" type="button" class="btn btn-default">
+        Reset
+      </button>
+    </div>
+  </form>
+
+  <div class="m-3">
+    <h2>Current model</h2>
+    <pre>{{task | json}}</pre>
+  </div>
+</div>

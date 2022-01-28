@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import * as model from "./model-interfaces"
 
 @Component({
   selector: 'app-first-form',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstFormComponent {
 
-  constructor() { }
+  model = model; //Interface wird in der HTML zugänglich
+  task: model.Task;
+
+  constructor() {
+    this.reset();
+  }
 
   saveTask(value: any) {
-    console.log(value)
+    this.task = value;
+  }
+
+  reset() {
+    this.task = model.createDefaultTask();
   }
 }
