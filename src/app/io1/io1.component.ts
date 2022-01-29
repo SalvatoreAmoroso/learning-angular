@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./io1.component.scss'],
 })
 export class IO1Component implements OnInit {
-  varDeclaredOutside: string = 'Zalli';
+  varDeclaredOutside: string = 'Salli';
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   innerComponentChanged(text: string) {
     console.log('Outer: My inner changed to ' + text);

@@ -5,8 +5,8 @@ import { isTaggedTemplateExpression } from 'typescript';
 // Da in diesem Fall (Content Insertion) kein Template nötig ist, reicht eine Direktive.
 // Verwendet in: contentinsertion.component.html
 @Directive({
-  selector: 'zallisPanel',
+  selector: 'SallisPanel',
 })
 export class PanelHeaderDirective {
-  constructor() {}
+  constructor() { }
 }
