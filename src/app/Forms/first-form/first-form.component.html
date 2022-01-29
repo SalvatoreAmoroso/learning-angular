@@ -123,7 +123,7 @@
         <pre>{{task | json}}</pre>
     </div>
 
-    <form novalidate #secondForm="ngForm" class="w-25 m-2 box-1">
+    <form novalidate #secondForm="ngForm" class="w-25 m-2 box-1" SallisIfMandatoryThanNameValidator>
         <h1>Validierung</h1>
         <div class="box-2">
             <h4>Fehler erkennen</h4>
@@ -175,6 +175,18 @@
                         Dieser User existiert bereits
                     </div>
                 </div>
+            </div>
+            <br>
+            <h4>Feldübergreifende Validierung</h4>
+            <aside>Szenario: Der Name soll zum Pflichfeld werden, wenn in einem anderen Dropdown "Pflicht" ausgewählt ist.
+            </aside>
+            <select class="form-control" [(ngModel)]="currentDropdownSel" name="currentDropdownSel">
+                <option value="">--- Bitte auswählen ---</option>
+                <option *ngFor="let opt of dropdownOptions">{{opt}}</option>
+            </select>
+            <input type="text" name="name" ngModel #maybeRequiredName="ngModel">
+            <div *ngIf="maybeRequiredName.touched && secondForm.form.hasError('nameRequired')" class="alert alert-danger">
+                Es wurde Pflicht ausgewählt. Deswegen muss ein Name angegeben werden.
             </div>
         </div>
     </form>

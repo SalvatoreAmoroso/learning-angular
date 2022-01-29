@@ -14,7 +14,7 @@ import { UserService } from './services/user.service';
 })
 export class EmailValidator {
 
-  validate(control: AbstractControl): { [key: string]: any } | null {
+  validate(control: AbstractControl): { [key: string]: boolean } | null {
     const regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     if (!control.value || control.value === '' || regex.test(control.value)) {
       return null;
@@ -44,8 +44,31 @@ export class UserExistsValidator {
       })
     )
   }
+}
+
+@Directive({
+  selector: '[SallisIfMandatoryThanNameValidator]',
+  providers: [{
+    provide: NG_VALIDATORS,
+    useExisting: IfMandatoryThanNameValidator,
+    multi: true
+  }]
+})
+export class IfMandatoryThanNameValidator {
+  validate(formGroup: AbstractControl): { [key: string]: boolean } | null {
+    const nameControl = formGroup.get("name");
+    const dropdownControl = formGroup.get("currentDropdownSel");
+
+    if (!nameControl || !dropdownControl) return null; //Zwingend notwendig, da es vorkommen kann, dass das Formular noch gar nicht vollständig geladen ist.
+
+    if (dropdownControl.value === 'Pflicht' && (!nameControl.value || nameControl.value === '')) {
+      return { nameRequired: true };
+    }
+
+    return null;
+  }
 
 }
 
 
-export const APPLICATION_VALIDATORS = [EmailValidator, UserExistsValidator];
+export const APPLICATION_VALIDATORS = [EmailValidator, UserExistsValidator, IfMandatoryThanNameValidator];

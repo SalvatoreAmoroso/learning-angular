@@ -10,6 +10,8 @@ export class FirstFormComponent {
 
   model = model; //Interface wird in der HTML zugänglich
   task: model.Task;
+  dropdownOptions: string[] = ["Pflicht", "Optional"];
+  currentDropdownSel: string = this.dropdownOptions[0];
 
   constructor() {
     this.reset();
