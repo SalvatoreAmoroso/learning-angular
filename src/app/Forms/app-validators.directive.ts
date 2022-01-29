@@ -37,7 +37,6 @@ export class UserExistsValidator {
   }
 
   validate(control: AbstractControl): Observable<any> {
-    console.log("validate")
     return this.userService.checkIfUserExists(control.value).pipe(delay(100),
       map(userExists => {
         return userExists === false ? { userNotFound: true } : null;

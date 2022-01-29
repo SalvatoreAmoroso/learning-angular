@@ -17,8 +17,15 @@ export class FirstFormComponent {
     this.reset();
   }
 
-  saveTask(value: any) {
+  form1Submit(value: any) {
     this.task = value;
+  }
+
+  form2Submit(valid: boolean | null) {
+    if (!valid) {
+      console.warn("Form not valid, abort submit");
+      return;
+    }
   }
 
   reset() {

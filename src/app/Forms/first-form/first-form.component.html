@@ -1,6 +1,6 @@
 <div class="d-flex">
 
-    <form novalidate (ngSubmit)="saveTask(form.value)" #form="ngForm" class="w-25 m-2 box-1">
+    <form novalidate (ngSubmit)="form1Submit(form.value)" #form="ngForm" class="w-25 m-2 box-1">
         <div class="m-2">Das ngModel überträgt die Daten in das Model anhand des HTML name Attributs</div>
         <div class="box-2">
             <h2>Text Felder</h2>
@@ -100,7 +100,7 @@
                     <label>Name</label>
                     <input type="text" name="name" class="form-control" [ngModel]="task.assignee.name">
                 </div>
-                <div class="form group">
+                <div class="form-group">
                     <label>E-Mail</label>
                     <input type="text" name="email" class="form-control" [ngModel]="task.assignee.email">
                 </div>
@@ -123,7 +123,8 @@
         <pre>{{task | json}}</pre>
     </div>
 
-    <form novalidate #secondForm="ngForm" class="w-25 m-2 box-1" SallisIfMandatoryThanNameValidator>
+    <!-- [ngFormOptions]="{updateOn: 'submit'}" -->
+    <form novalidate #secondForm="ngForm" class="w-25 m-2 box-1" SallisIfMandatoryThanNameValidator (ngSubmit)="form2Submit(secondForm.valid)">
         <h1>Validierung</h1>
         <div class="box-2">
             <h4>Fehler erkennen</h4>
@@ -154,7 +155,7 @@
 
             <h4>Eigene Validatoren</h4>
             <div ngModelGroup="assignee">
-                <div class="form group">
+                <div class="form-group">
                     <label>E-Mail</label>
                     <input type="text" name="email" class="form-control" [ngModel]="task.assignee.email" SallisEmailValidator #email="ngModel">
                 </div>
@@ -166,8 +167,8 @@
             </div>
             <br>
             <h4>Asynchrone Validatoren</h4>
-            <div class="form group">
-                <label>User ('Salli' ist bereits vergeben)</label>
+            <div class="form-group">
+                <label>User ('Salli' ist bereits vergeben):</label>
                 <input type="text" name="user" class="form-control" SallisUserExistsValidator ngModel #userName="ngModel">
                 <div *ngIf="userName.control.pending">Der Name wird überprüft</div>
                 <div *ngIf="!userName.valid && userName.touched" class="alert alert-danger">
@@ -176,6 +177,21 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                <h3>Steuern, wann validiert wird (updateOn)</h3>
+                <aside>Standardmäßig wird der Wert eines FormControl bei jeder Änderung des dahinterliegenden Eingabe-Elements verändert (und damit validiert). Dagegen kann über updateOn jedes HTML Form Event zur Validierung festgelegt werden. Mit [ngFormOptions]
+                    kann diese Einstellung auch auf Formebene festgelegt werden. So wird hier erst beim Klicken auf Speichern überprüft, ob der User bereits existiert.</aside>
+                <br>
+                <label>User ('Salli' ist bereits vergeben):</label>
+                <input type="text" name="user2" class="form-control" SallisUserExistsValidator ngModel #userName2="ngModel" [ngModelOptions]="{updateOn: 'submit'}">
+                <div *ngIf="userName2.control.pending">Der Name wird überprüft</div>
+                <div *ngIf="!userName2.valid && userName2.touched" class="alert alert-danger">
+                    <div *ngIf="userName2.control.hasError('userNotFound')">
+                        Dieser User existiert bereits
+                    </div>
+                </div>
+            </div>
+
             <br>
             <h4>Feldübergreifende Validierung</h4>
             <aside>Szenario: Der Name soll zum Pflichfeld werden, wenn in einem anderen Dropdown "Pflicht" ausgewählt ist.
@@ -188,6 +204,12 @@
             <div *ngIf="maybeRequiredName.touched && secondForm.form.hasError('nameRequired')" class="alert alert-danger">
                 Es wurde Pflicht ausgewählt. Deswegen muss ein Name angegeben werden.
             </div>
+        </div>
+
+        <div class="box-2">
+            <button type="submit" class="btn btn-default" [disabled]="!form.valid">
+                Speichern
+            </button>
         </div>
     </form>
 
