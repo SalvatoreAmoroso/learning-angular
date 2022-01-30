@@ -35,7 +35,10 @@ import { CentimeterPipe } from './StandardFunctions/pipes/centimeter.pipe';
 import { PureVsImpurePipe } from './StandardFunctions/pipes/pure-vs-impure.pipe';
 import { DependencyInjectionModule } from './dependency-injection/dependency-injection.module';
 import { FormsExampleModule } from './Forms/forms-example.module';
-
+import { AppRoutingComponents, AppRoutingModule } from './Routing/app-routing.module';
+import { DashboardComponent } from './Routing/dashboard/dashboard.component';
+import { SettingsComponent } from './Routing/settings/settings.component';
+import { AboutComponent } from './Routing/about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,9 +75,13 @@ import { FormsExampleModule } from './Forms/forms-example.module';
     StandardDirectivesComponent,
     PipesComponent,
     CentimeterPipe,
-    PureVsImpurePipe
+    PureVsImpurePipe,
+    DashboardComponent,
+    SettingsComponent,
+    AboutComponent,
+    AppRoutingComponents
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule, AppRoutingModule],
   providers: [], //Define global services here as a singleton (RootInjector)
   bootstrap: [AppComponent]
 })
