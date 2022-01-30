@@ -91,7 +91,8 @@ export class ContactEntryComponent implements OnChanges, AfterViewChecked {
 
   checkCount = 0;
   ngAfterViewChecked() {
-    console.log(`[Not-optimized] Contact ${this.contact.name} checked ${this.checkCount++} times`);
+    // TODO: Wird immer ausgeführt, auch wenn die Komponente nicht zu sehen ist ?
+    // console.log(`[Not-optimized] Contact ${this.contact.name} checked ${this.checkCount++} times`);
   }
 }
 
