@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { emailValidator } from '../app-validators.directive';
 import { Task2 } from '../model-interfaces';
 import { TaskService } from '../services/task.service';
 
@@ -13,10 +14,15 @@ export class ReactiveFormComponent {
   task: Task2;
   taskForm: FormGroup;
   tagsArray: FormArray;
+  taskForm2: FormGroup;
+  tagsArray2: FormArray;
+  task2: Task2;
 
   constructor(private taskService: TaskService, fb: FormBuilder) {
     this.useFormBuilder(fb);
+    this.useFormBuilderWithValidation(fb);
     this.tagsArray = this.taskForm.controls["tags"] as FormArray;
+    this.tagsArray2 = this.taskForm2.controls["tags"] as FormArray;
   }
 
   private useNativeWay() {
@@ -46,12 +52,30 @@ export class ReactiveFormComponent {
       state: ["BACKLOG"],
       tags: fb.array([
         fb.group({
-          lavel: []
+          label: []
         })
       ]),
       assignee: fb.group({
         name: [],
         email: []
+      })
+    })
+  }
+
+  private useFormBuilderWithValidation(fb: FormBuilder) {
+    this.taskForm2 = fb.group({
+      title: ['', [Validators.required, Validators.minLength(5)]],
+      description: ['', Validators.maxLength(100)],
+      favorite: [],
+      state: ["BACKLOG"],
+      tags: fb.array([
+        fb.group({
+          label: ['', Validators.minLength(3)]
+        })
+      ]),
+      assignee: fb.group({
+        name: [],
+        email: ['', emailValidator]
       })
     })
   }

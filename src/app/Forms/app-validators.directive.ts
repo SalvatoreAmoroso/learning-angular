@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 import { UserService } from './services/user.service';
 
+// ################################# TEMPLATE-DRIVEN FORMS #################################
 @Directive({
   selector: '[SallisEmailValidator]',
   providers: [{
@@ -69,5 +70,27 @@ export class IfMandatoryThanNameValidator {
 
 }
 
+// ################################# REACTIVE FORMS #################################
+
+
+export function emailValidator(control: AbstractControl): { [key: string]: boolean } | null {
+  const regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+  if (!control.value || control.value === '' || regex.test(control.value)) {
+    return null;
+  }
+  return { invalidEmail: true }
+}
+
+// ################################# VALIDATOREN FÜR TEMPLATE-DRIVEN UND REACTIVE FORMS #################################
+
+@Directive({
+  selector: '[SallisEmailValidator2]',
+  providers: [{
+    provide: NG_VALIDATORS,
+    useValue: emailValidator, //Die Validator Funktion, welche für Reactive Forms verwendet wird, kann direkt bei einer Direktive registriert werden. So kann dieselbe Funktion für Template-driven genutzt werden
+    multi: true
+  }]
+})
+class EmailValidator2 { }
 
 export const APPLICATION_VALIDATORS = [EmailValidator, UserExistsValidator, IfMandatoryThanNameValidator];
