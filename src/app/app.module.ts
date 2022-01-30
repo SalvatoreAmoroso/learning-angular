@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { OneWayPropComponent } from './oneway-prop/oneway-prop.component';
 import { EventsComponent } from './events/events.component';
 import { TwowayComponent } from './twoway/twoway.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LocalvarComponent } from './localvar/localvar.component';
 import { MicrosyntaxComponent } from './microsyntax/microsyntax.component';
 import { IO1Component } from './io1/io1.component';
@@ -72,9 +72,9 @@ import { FormsExampleModule } from './Forms/forms-example.module';
     StandardDirectivesComponent,
     PipesComponent,
     CentimeterPipe,
-    PureVsImpurePipe,
+    PureVsImpurePipe
   ],
-  imports: [BrowserModule, FormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule],
   providers: [], //Define global services here as a singleton (RootInjector)
   bootstrap: [AppComponent]
 })

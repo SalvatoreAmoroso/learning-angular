@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as model from "./model-interfaces"
+import * as model from "../model-interfaces"
 
 @Component({
   selector: 'app-first-form',

@@ -19,6 +19,18 @@ export interface Task {
     twoway?: string;
 }
 
+export interface Task2 {
+    id?: number;
+    title?: string;
+    description?: string;
+    tags?: Tag[];
+    favorite?: boolean;
+    state?: string;
+    assignee: User;
+    oneway?: string;
+    twoway?: string;
+}
+
 export const stateGroups = [
     {
         label: 'Planung',
