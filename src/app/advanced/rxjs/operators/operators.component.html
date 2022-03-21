@@ -1,0 +1,28 @@
+<div class="box-2">
+    <h3>switchMap</h3>
+
+    <p>Paraphrase: switch to a new observable</p>
+
+    <h5>Erklärung</h5>
+
+    <p>switchMap wird in einer Pipe eines bereits vorhandenen Observables (parent observable) eingesetzt. Es
+        erhält als Parameter wieder ein Observable (inner observable). Immer dann, wenn das parent emittet, wird zum
+        inner observable geswitcht. Dabei wird das vorherige inner observable abgebrochen.
+    </p>
+
+    <p>
+        Wenn man hier auf das Dokument klickt (parent observable), wird zum interval observable gewechselt (inner),
+        welches jede Sekunde eine inkrementierte Zahl emittet. Klickt man nochmal, wird die inner observable vom
+        vorherigen Klick abgebrochen und neu gestartet (=> der Counter startet neu).
+    </p>
+
+    <h5>Beispiel</h5>
+    <p>
+        <i>Irgendwo klicken, um den Counter zu resetten:</i> {{testingSwitchMap}}
+    </p>
+
+    <h5>Anwendungsbeispiel</h5>
+
+    <p>Typeahead Suchen, denn hier interessiert man sich nur für den aktuellsten Wert (z.B. wenn bei jedem
+        Tastendruck die Suche gestartet wird). Das vorherige Ergebnis wird verworfen.</p>
+</div>

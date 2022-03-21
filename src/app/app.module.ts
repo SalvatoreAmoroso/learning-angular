@@ -39,6 +39,9 @@ import { AppRoutingComponents, AppRoutingModule } from './Routing/app-routing.mo
 import { DashboardComponent } from './Routing/dashboard/dashboard.component';
 import { SettingsComponent } from './Routing/settings/settings.component';
 import { AboutComponent } from './Routing/about/about.component';
+import { RxjsComponent } from './Advanced/rxjs/rxjs.component';
+import { SubjectsComponent } from './Advanced/rxjs/subjects/subjects.component';
+import { OperatorsComponent } from './Advanced/rxjs/operators/operators.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +82,10 @@ import { AboutComponent } from './Routing/about/about.component';
     DashboardComponent,
     SettingsComponent,
     AboutComponent,
-    AppRoutingComponents
+    AppRoutingComponents,
+    RxjsComponent,
+    SubjectsComponent,
+    OperatorsComponent
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule, AppRoutingModule],
   providers: [], //Define global services here as a singleton (RootInjector)
