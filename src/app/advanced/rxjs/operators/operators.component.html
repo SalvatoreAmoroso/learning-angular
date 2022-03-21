@@ -49,3 +49,25 @@
     {{testingScan2}}
 
 </div>
+
+<div class="box-2">
+    <h3>combineLatest</h3>
+
+    <p>Paraphrase: Kombiniere das Ergebnis mehrerer Observables</p>
+
+    <h5>Erklärung</h5>
+    Kombiniert das neuste Ergebnis mehrerer Observables. Wartet zu Beginn, bis <b>alle</b> Observables mindestens einen
+    Wert emittet haben. Mit startWith kann dies Umgang werden, in dem die Observables zu Beginn einen Startwert emitten
+    (siehe Code).
+
+    <h5>Beispiel</h5>
+
+    <div>
+        <button #red>Red</button>
+        <button #black>Black</button>
+
+        <div>Red: {{redTotal}}</div>
+        <div>Black: {{blackTotal}}</div>
+        <div>Total: {{total}}</div>
+    </div>
+</div>

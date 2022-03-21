@@ -1,13 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { fromEvent, interval, of } from 'rxjs';
-import { delay, map, mapTo, mergeMap, scan, startWith, switchMap } from 'rxjs/operators';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { combineLatest, fromEvent, interval, Observable, of } from 'rxjs';
+import { map, mapTo, scan, startWith, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-operators',
   templateUrl: './operators.component.html',
   styleUrls: ['./operators.component.scss']
 })
-export class OperatorsComponent {
+export class OperatorsComponent implements AfterViewInit {
+
+  @ViewChild("red") redButton: ElementRef;
+  @ViewChild("black") blackButton: ElementRef;
+
+  redTotal: number = 0;
+  blackTotal: number = 0;
+  total: number = 0;
 
   testingSwitchMap: number = 0;
   testingScan1: string = "";
@@ -19,7 +26,11 @@ export class OperatorsComponent {
     this.scanExample2();
   }
 
-  switchMapExample() {
+  ngAfterViewInit(): void {
+    this.combineLatestExample();
+  }
+
+  private switchMapExample() {
     let switchMap$ = fromEvent(document, "click")
       .pipe(
         switchMap(() => interval(1000))
@@ -29,7 +40,7 @@ export class OperatorsComponent {
     switchMap$.subscribe(value => this.testingSwitchMap = value)
   }
 
-  scanExample1() {
+  private scanExample1() {
     let source$ = of(1, 2, 3);
 
     let scan$ = source$.pipe(
@@ -41,7 +52,7 @@ export class OperatorsComponent {
     scan$.subscribe(value => this.testingScan1 += (value + "<br>"));
   }
 
-  scanExample2() {
+  private scanExample2() {
     let fakeRequest$ = interval(1000);
 
     let scan$ = fakeRequest$.pipe(
@@ -53,4 +64,25 @@ export class OperatorsComponent {
 
     scan$.subscribe(value => this.testingScan2 = value)
   }
+
+  private combineLatestExample() {
+
+    const addClickCounter$ = (btn: ElementRef) =>
+      fromEvent(btn.nativeElement, 'click').pipe(
+        // map every click to 1
+        mapTo(1),
+        // Zählt hoch, wie oft der Button gedrückt wurde
+        scan((acc, curr) => acc + curr, 0),
+        //Das hier ist nötig. combineLatest würde sonst darauf warten, bis sowohl der rote als auch der Blaue Button einen Wert emittet haben. Hier wird der Startwert 0 künstlich emittet.
+        startWith(0)
+      );
+
+    combineLatest([addClickCounter$(this.redButton), addClickCounter$(this.blackButton)])
+      .subscribe(([red, black]: any) => {
+        this.redTotal = red;
+        this.blackTotal = black;
+        this.total = red + black;
+      });
+  }
+
 }
