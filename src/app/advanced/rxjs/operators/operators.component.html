@@ -26,3 +26,26 @@
     <p>Typeahead Suchen, denn hier interessiert man sich nur für den aktuellsten Wert (z.B. wenn bei jedem
         Tastendruck die Suche gestartet wird). Das vorherige Ergebnis wird verworfen.</p>
 </div>
+
+<div class="box-2">
+    <h3>scan</h3>
+
+    <p>Paraphrase: Nehme vorheriges Ergebnis und berechne neues Ergebnis anhand des aktuellen Werts.</p>
+
+    <h5>Erklärung</h5>
+
+    <p>scan überträgt das vorherige scan Ergebnis und den aktuellen emit value. Zu Beginn wird ein Default Wert für den
+        scan value festegelegt (Seed).</p>
+
+
+    <h5>Beispiel 1</h5>
+
+    <p>Vorheriger Wert wird mit aktuellem addiert. Entspricht der Berechnung einer Reihe (Zahlensumme).</p>
+    <div [innerHTML]="testingScan1"></div>
+
+    <h5>Beispiel 2</h5>
+
+    <p>Scan gibt ein Array zurück. Der aktuelle emit value wird dem Array hinzugefügt. Seed ist ein leeres Array.</p>
+    {{testingScan2}}
+
+</div>
