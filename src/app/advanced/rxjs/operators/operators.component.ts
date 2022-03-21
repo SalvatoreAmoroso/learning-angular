@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { combineLatest, fromEvent, interval, merge, Observable, of } from 'rxjs';
+import { combineLatest, concat, fromEvent, interval, merge, Observable, of } from 'rxjs';
 import { map, mapTo, scan, startWith, switchMap } from 'rxjs/operators';
 
 @Component({
@@ -20,12 +20,14 @@ export class OperatorsComponent implements AfterViewInit {
   testingScan1: string = "";
   testingScan2: string[] = [];
   testingMerge: string[] = [];
+  testingConcat: string[] = [];
 
   constructor() {
     this.switchMapExample();
     this.scanExample1();
     this.scanExample2();
     this.mergeExample();
+    this.concatExample();
   }
 
   ngAfterViewInit(): void {
@@ -105,7 +107,18 @@ export class OperatorsComponent implements AfterViewInit {
       fourth.pipe(mapTo('FOURTH'))
     );
 
-    example$.subscribe(val => this.testingMerge = [...this.testingMerge, val])
+    example$.subscribe(val => this.testingMerge = [...this.testingMerge, val]);
   }
 
+  private concatExample() {
+    let concat$ = concat(
+      of("Observable A: 1", "Observable A: 2", "Observable A: 3"),
+      // subscribed after first completes
+      of("Observable B: 4", "Observable B: 5", "Observable B: 6"),
+      // subscribed after second completes
+      of("Observable C: ", "Observable C: 8", "Observable C: 9")
+    );
+
+    concat$.subscribe(val => this.testingConcat = [...this.testingConcat, val]);
+  }
 }
