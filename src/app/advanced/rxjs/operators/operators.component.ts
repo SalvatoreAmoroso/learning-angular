@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { combineLatest, fromEvent, interval, Observable, of } from 'rxjs';
+import { combineLatest, fromEvent, interval, merge, Observable, of } from 'rxjs';
 import { map, mapTo, scan, startWith, switchMap } from 'rxjs/operators';
 
 @Component({
@@ -19,11 +19,13 @@ export class OperatorsComponent implements AfterViewInit {
   testingSwitchMap: number = 0;
   testingScan1: string = "";
   testingScan2: string[] = [];
+  testingMerge: string[] = [];
 
   constructor() {
     this.switchMapExample();
     this.scanExample1();
     this.scanExample2();
+    this.mergeExample();
   }
 
   ngAfterViewInit(): void {
@@ -83,6 +85,27 @@ export class OperatorsComponent implements AfterViewInit {
         this.blackTotal = black;
         this.total = red + black;
       });
+  }
+
+  private mergeExample() {
+    //emit every 2.5 seconds
+    const first = interval(2500);
+    //emit every 2 seconds
+    const second = interval(2000);
+    //emit every 1.5 seconds
+    const third = interval(1500);
+    //emit every 1 second
+    const fourth = interval(1000);
+
+    //emit outputs from one observable
+    const example$ = merge(
+      first.pipe(mapTo('FIRST!')),
+      second.pipe(mapTo('SECOND!')),
+      third.pipe(mapTo('THIRD')),
+      fourth.pipe(mapTo('FOURTH'))
+    );
+
+    example$.subscribe(val => this.testingMerge = [...this.testingMerge, val])
   }
 
 }
