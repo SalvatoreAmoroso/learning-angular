@@ -7,7 +7,7 @@ import { switchMap } from 'rxjs/operators';
   templateUrl: './rxjs.component.html',
   styleUrls: ['./rxjs.component.scss']
 })
-export class RxjsComponent {
+export class RxJsComponent {
 
   testingSwitchMap: number = 0;
 

@@ -22,8 +22,8 @@ import { ViewEncapsulationComponent } from './Advanced/view-encapsulation/view-e
 import { TemplateRefComponent } from './Advanced/template-ref/template-ref.component';
 import { TemplateRefDemoComponent } from './Advanced/template-ref/template-ref-demo/template-ref-demo.component';
 import { ViewContainerRefComponent, CircleComponent, SquareComponent } from './Advanced/view-container-ref/view-container-ref.component';
-import { RepeaterDirective } from './Advanced/repeater-demo/repeater.directive';
-import { RepeaterDemoComponent } from './Advanced/repeater-demo/repeater-demo.component';
+import { RepeaterDirective } from './Advanced/embedded-view/repeater.directive';
+import { RepeaterDemoComponent } from './Advanced/embedded-view/repeater-demo.component';
 import { ChangeDetectionPerformanceComponent, ContactListComponent, ContactEntryComponent } from './Advanced/change-detection-performance/change-detection-performance.component';
 import { ChangeDetectionPerformanceOptimizedComponent, ContactListOptimizedComponent, ContactEntryOptimizedComponent } from './Advanced/change-detection-performance-optimized/change-detection-performance-optimized.component';
 import { StandardDirectivesComponent } from './StandardFunctions/standard-directives/standard-directives.component';
@@ -36,7 +36,7 @@ import { AppRoutingComponents, RoutingExampleRoutingModule } from './Routing/rou
 import { DashboardComponent } from './Routing/dashboard/dashboard.component';
 import { SettingsComponent } from './Routing/settings/settings.component';
 import { AboutComponent } from './Routing/about/about.component';
-import { RxjsComponent } from './Advanced/rxjs/rxjs.component';
+import { RxJsComponent } from './Advanced/rxjs/rxjs.component';
 import { SubjectsComponent } from './Advanced/rxjs/subjects/subjects.component';
 import { OperatorsComponent } from './Advanced/rxjs/operators/operators.component';
 import { PropBindingComponent } from './PropertyBinding/prop-binding.component';
@@ -44,6 +44,7 @@ import { OtherComponent } from './Other/other.component';
 import { LocalVarComponent } from './Other/localvar/localvar.component';
 import { InputOutputBindingComponent } from './InputOutputBinding/input-output-binding.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AdvancedComponent } from './Advanced/advanced.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,12 +84,13 @@ import { AppRoutingModule } from './app-routing.module';
     SettingsComponent,
     AboutComponent,
     AppRoutingComponents,
-    RxjsComponent,
+    RxJsComponent,
     SubjectsComponent,
     OperatorsComponent,
     PropBindingComponent,
     OtherComponent,
-    InputOutputBindingComponent
+    InputOutputBindingComponent,
+    AdvancedComponent
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule, RoutingExampleRoutingModule, AppRoutingModule],
   providers: [], //Define global services here as a singleton (RootInjector)
