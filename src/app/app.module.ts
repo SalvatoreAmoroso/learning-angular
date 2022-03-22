@@ -42,6 +42,8 @@ import { OperatorsComponent } from './Advanced/rxjs/operators/operators.componen
 import { PropBindingComponent } from './PropertyBinding/prop-binding.component';
 import { OtherComponent } from './Other/other.component';
 import { LocalVarComponent } from './Other/localvar/localvar.component';
+import { InputOutputBindingComponent } from './InputOutputBinding/input-output-binding.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +87,8 @@ import { LocalVarComponent } from './Other/localvar/localvar.component';
     SubjectsComponent,
     OperatorsComponent,
     PropBindingComponent,
-    OtherComponent
+    OtherComponent,
+    InputOutputBindingComponent
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule, AppRoutingModule],
   providers: [], //Define global services here as a singleton (RootInjector)
