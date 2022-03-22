@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from 'src/app/microsyntax/person';
+import { Person } from 'src/app/Other/microsyntax/person';
 
 @Component({
   selector: 'app-template-ref-demo',

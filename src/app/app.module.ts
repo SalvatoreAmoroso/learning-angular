@@ -4,8 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { EventsComponent } from './events/events.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LocalvarComponent } from './localvar/localvar.component';
-import { MicrosyntaxComponent } from './microsyntax/microsyntax.component';
+import { MicrosyntaxComponent } from './Other/microsyntax/microsyntax.component';
 import { IO1Component } from './io1/io1.component';
 import { IO1InnerComponent } from './io1-inner/io1-inner.component';
 import { Io2Component } from './io2/io2.component';
@@ -41,11 +40,13 @@ import { RxjsComponent } from './Advanced/rxjs/rxjs.component';
 import { SubjectsComponent } from './Advanced/rxjs/subjects/subjects.component';
 import { OperatorsComponent } from './Advanced/rxjs/operators/operators.component';
 import { PropBindingComponent } from './prop-binding/prop-binding.component';
+import { OtherComponent } from './Other/other.component';
+import { LocalVarComponent } from './Other/localvar/localvar.component';
 @NgModule({
   declarations: [
     AppComponent,
     EventsComponent,
-    LocalvarComponent,
+    LocalVarComponent,
     MicrosyntaxComponent,
     IO1Component,
     IO1InnerComponent,
@@ -83,7 +84,8 @@ import { PropBindingComponent } from './prop-binding/prop-binding.component';
     RxjsComponent,
     SubjectsComponent,
     OperatorsComponent,
-    PropBindingComponent
+    PropBindingComponent,
+    OtherComponent
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule, AppRoutingModule],
   providers: [], //Define global services here as a singleton (RootInjector)

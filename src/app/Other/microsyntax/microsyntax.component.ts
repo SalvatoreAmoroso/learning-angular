@@ -8,10 +8,10 @@ import { Person } from './person';
 })
 
 export class MicrosyntaxComponent implements OnInit {
- 
+
   persons: Person[] = []
   constructor() {
-    this.persons.push({name: "Salvatore", age: 22}, {name: "Jennifer", age: 12})
+    this.persons.push({ name: "Max", age: 22 }, { name: "Tim", age: 30 })
   }
 
   ngOnInit(): void {

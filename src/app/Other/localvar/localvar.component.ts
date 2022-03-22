@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './localvar.component.html',
   styleUrls: ['./localvar.component.scss']
 })
-export class LocalvarComponent implements OnInit {
+export class LocalVarComponent implements OnInit {
 
   constructor() { }
 
@@ -13,7 +13,7 @@ export class LocalvarComponent implements OnInit {
   }
 
   randomString() {
-    const randomLength :number = Math.floor(Math.random() * 5) + 5
+    const randomLength: number = Math.floor(Math.random() * 5) + 5
     let randomString = ""
     for (let index = 0; index < randomLength; index++) {
       randomString += String.fromCharCode(Math.floor(Math.random() * 25) + 65)
