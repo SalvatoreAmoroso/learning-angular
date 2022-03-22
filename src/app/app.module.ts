@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { OneWayPropComponent } from './oneway-prop/oneway-prop.component';
 import { EventsComponent } from './events/events.component';
-import { TwowayComponent } from './twoway/twoway.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LocalvarComponent } from './localvar/localvar.component';
 import { MicrosyntaxComponent } from './microsyntax/microsyntax.component';
@@ -42,12 +40,11 @@ import { AboutComponent } from './Routing/about/about.component';
 import { RxjsComponent } from './Advanced/rxjs/rxjs.component';
 import { SubjectsComponent } from './Advanced/rxjs/subjects/subjects.component';
 import { OperatorsComponent } from './Advanced/rxjs/operators/operators.component';
+import { PropBindingComponent } from './prop-binding/prop-binding.component';
 @NgModule({
   declarations: [
     AppComponent,
-    OneWayPropComponent,
     EventsComponent,
-    TwowayComponent,
     LocalvarComponent,
     MicrosyntaxComponent,
     IO1Component,
@@ -85,7 +82,8 @@ import { OperatorsComponent } from './Advanced/rxjs/operators/operators.componen
     AppRoutingComponents,
     RxjsComponent,
     SubjectsComponent,
-    OperatorsComponent
+    OperatorsComponent,
+    PropBindingComponent
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule, AppRoutingModule],
   providers: [], //Define global services here as a singleton (RootInjector)
