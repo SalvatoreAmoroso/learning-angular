@@ -3,14 +3,11 @@
   <div class="box-2">
     <h2>Input/Output Binding</h2>
     Outer Variable: {{ varDeclaredOutside }}
-    <app-io1-inner
-      [passedVar]="varDeclaredOutside"
-      (changeEvent)="innerComponentChanged($event)"
-    ></app-io1-inner>
+    <app-io1-inner [passedVar]="varDeclaredOutside" (changeEvent)="innerComponentChanged($event)"></app-io1-inner>
   </div>
 
   <div class="box-2">
-    <h2>Input/Output Binding (Syntax Sugar)</h2>
+    <h2>Input/Output Binding (Syntactic sugar)</h2>
     Outer Variable: {{ varDeclaredOutside }}
     <app-io1-inner [(passedVar)]="varDeclaredOutside" #test></app-io1-inner>
 
