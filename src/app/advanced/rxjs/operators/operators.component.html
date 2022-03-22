@@ -60,6 +60,9 @@
     Wert emittet haben. Mit startWith kann dies Umgang werden, in dem die Observables zu Beginn einen Startwert emitten
     (siehe Code).
 
+    <a href="https://rxjs.dev/api/index/function/combineLatest"><img src="/assets/img/combineLatest.png" alt="Graph"
+            style="width: 25vw;"></a>
+
     <h5>Beispiel</h5>
 
     <div>
@@ -69,6 +72,37 @@
         <div>Red: {{redTotal}}</div>
         <div>Black: {{blackTotal}}</div>
         <div>Total: {{total}}</div>
+    </div>
+</div>
+
+<div class="box-2">
+    <h3>withLatestFrom</h3>
+
+    <p>Paraphrase: Also provide the last value from another observable.</p>
+
+    <h5>Erklärung</h5>
+
+    Vereint mehrere Observables. Emittet aber immer alle aktuellen Werte, wenn sich mindetens ein Observable ändert.
+    Wie bei combineLatest, wird darauf gewartet bis alle observables mindestens einen Wert haben (ohne "latest" kein
+    emit in withLatestFrom). Im Vergleich zu combineLatest nimmt withLatestFrom ein Observable als "Base" an
+    (base.withlatestFrom(child)) und emittet immer, wenn base emittet (vorausgesetzt child hat ein Wert).
+    combineLatestFrom würde auch immer dann emittet, wenn sich nur child ändert.
+
+    <a href="https://rxjs.dev/api/operators/withLatestFrom"><img src="/assets/img/withLatestFrom.png" alt="Graph"
+            style="width: 25vw;"></a>
+
+    <h5>Beispiel</h5>
+
+    <div style="display: flex;">
+        <div>
+            <p>Latest value from quicker second source</p>
+            <div style="overflow: auto;" [innerHTML]="testingWithLastestFrom"></div>
+        </div>
+        <div style="width: 2px; background-color: black; margin: 5px;"></div>
+        <div>
+            <p>Slower second source</p>
+            <div style="overflow: auto;" [innerHTML]="testingWithLastestFrom2"></div>
+        </div>
     </div>
 </div>
 

@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { combineLatest, concat, fromEvent, interval, merge, Observable, of } from 'rxjs';
-import { map, mapTo, scan, startWith, switchMap } from 'rxjs/operators';
+import { map, mapTo, scan, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 
 @Component({
   selector: 'app-operators',
@@ -21,6 +21,8 @@ export class OperatorsComponent implements AfterViewInit {
   testingScan2: string[] = [];
   testingMerge: string[] = [];
   testingConcat: string[] = [];
+  testingWithLastestFrom: string = "";
+  testingWithLastestFrom2: string = "";
 
   constructor() {
     this.switchMapExample();
@@ -28,6 +30,7 @@ export class OperatorsComponent implements AfterViewInit {
     this.scanExample2();
     this.mergeExample();
     this.concatExample();
+    this.withLatestFromExample();
   }
 
   ngAfterViewInit(): void {
@@ -120,5 +123,26 @@ export class OperatorsComponent implements AfterViewInit {
     );
 
     concat$.subscribe(val => this.testingConcat = [...this.testingConcat, val]);
+  }
+
+  private withLatestFromExample() {
+
+    //emit every 5s
+    const slowSource = interval(5000);
+    //emit every 2.5s
+    const fastSource = interval(2500);
+
+    const example = slowSource.pipe(
+      withLatestFrom(fastSource),
+      map(([first, second]) => `Slow Source: ${first} || Fast Source: ${second}<br>`)
+    );
+
+    const example2 = fastSource.pipe(
+      withLatestFrom(slowSource),
+      map(([first, second]) => `Fast Source: ${first} || Slow Source: ${second}<br>`)
+    );
+
+    example.subscribe(val => this.testingWithLastestFrom += val);
+    example2.subscribe(val => this.testingWithLastestFrom2 += val);
   }
 }
