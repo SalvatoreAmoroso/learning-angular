@@ -3,30 +3,33 @@
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";
 
-$primaryColor: #1f2421;
-$secondaryColor: #216869;
-$tertiaryColor: #49a078;
-$quaternaryColor: #9cc5a1;
-$quintaryColor: #dce1de;
+body {
+  background-color: #313131;
+  color: white;
+}
 
 .box-1 {
-  border: 1px solid $primaryColor;
   margin: 5px;
   padding: 5px;
-  background-color: $tertiaryColor;
+  background-color: #424242;
+  border-radius: 15px;
 }
 
 .box-2 {
-  border: 1px solid $secondaryColor;
   margin: 5px;
   padding: 5px;
-  background-color: $quaternaryColor;
-}
-
-body {
-  background-color: $quintaryColor;
+  background-color: #525252;
+  border-radius: 15px;
 }
 
 .active {
-  background-color: orange;
+  font-weight: bold;
+}
+
+.bg-blue {
+  background-color: #303f9f;
+}
+
+.navbar a {
+  color: white !important;
 }
