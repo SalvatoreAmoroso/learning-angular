@@ -39,7 +39,7 @@ import { AboutComponent } from './Routing/about/about.component';
 import { RxjsComponent } from './Advanced/rxjs/rxjs.component';
 import { SubjectsComponent } from './Advanced/rxjs/subjects/subjects.component';
 import { OperatorsComponent } from './Advanced/rxjs/operators/operators.component';
-import { PropBindingComponent } from './prop-binding/prop-binding.component';
+import { PropBindingComponent } from './PropertyBinding/prop-binding.component';
 import { OtherComponent } from './Other/other.component';
 import { LocalVarComponent } from './Other/localvar/localvar.component';
 @NgModule({
