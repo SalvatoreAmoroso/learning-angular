@@ -1,0 +1,185 @@
+<h2>Transformation operators</h2>
+
+<div class="box-2">
+    <h3>switchMap</h3>
+
+    <p>Paraphrase: switch to a new observable</p>
+
+    <h5>Erklärung</h5>
+
+    <p>switchMap wird in einer Pipe eines bereits vorhandenen Observables (parent observable) eingesetzt. Es
+        erhält als Parameter wieder ein Observable (inner observable). Immer dann, wenn das parent emittet, wird zum
+        inner observable geswitcht. Dabei wird das vorherige inner observable abgebrochen.
+    </p>
+
+    <p>
+        Wenn man hier auf das Dokument klickt (parent observable), wird zum interval observable gewechselt (inner),
+        welches jede Sekunde eine inkrementierte Zahl emittet. Klickt man nochmal, wird die inner observable vom
+        vorherigen Klick abgebrochen und neu gestartet (=> der Counter startet neu).
+    </p>
+
+    <h5>Beispiel</h5>
+    <p>
+        <i>Irgendwo klicken, um den Counter zu resetten:</i> {{testingSwitchMap}}
+    </p>
+
+    <h5>Anwendungsbeispiel</h5>
+
+    <p>Typeahead Suchen, denn hier interessiert man sich nur für den aktuellsten Wert (z.B. wenn bei jedem
+        Tastendruck die Suche gestartet wird). Das vorherige Ergebnis wird verworfen.</p>
+</div>
+
+<div class="box-2">
+    <h3>scan</h3>
+
+    <p>Paraphrase: Nehme vorheriges Ergebnis und berechne neues Ergebnis anhand des aktuellen Werts.</p>
+
+    <h5>Erklärung</h5>
+
+    <p>scan überträgt das vorherige scan Ergebnis und den aktuellen emit value. Zu Beginn wird ein Default Wert für den
+        scan value festegelegt (Seed).</p>
+
+
+    <h5>Beispiel 1</h5>
+
+    <p>Vorheriger Wert wird mit aktuellem addiert. Entspricht der Berechnung einer Reihe (Zahlensumme).</p>
+    <div [innerHTML]="testingScan1"></div>
+
+    <h5>Beispiel 2</h5>
+
+    <p>Scan gibt ein Array zurück. Der aktuelle emit value wird dem Array hinzugefügt. Seed ist ein leeres Array.</p>
+    {{testingScan2}}
+
+</div>
+
+<h2>Combination operators</h2>
+
+<div class="box-2">
+    <h3>combineLatest</h3>
+
+    <p>Paraphrase: Kombiniere das Ergebnis mehrerer Observables</p>
+
+    <h5>Erklärung</h5>
+    Kombiniert das neuste Ergebnis mehrerer Observables. Wartet zu Beginn, bis <b>alle</b> Observables mindestens einen
+    Wert emittet haben. Mit startWith kann dies Umgang werden, in dem die Observables zu Beginn einen Startwert emitten
+    (siehe Code).
+
+    <a href="https://rxjs.dev/api/index/function/combineLatest"><img src="/assets/img/combineLatest.png" alt="Graph"
+            style="width: 25vw;"></a>
+
+    <h5>Beispiel</h5>
+
+    <div>
+        <button #red>Red</button>
+        <button #black>Black</button>
+
+        <div>Red: {{redTotal}}</div>
+        <div>Black: {{blackTotal}}</div>
+        <div>Total: {{total}}</div>
+    </div>
+</div>
+
+<div class="box-2">
+    <h3>withLatestFrom</h3>
+
+    <p>Paraphrase: Also provide the last value from another observable.</p>
+
+    <h5>Erklärung</h5>
+
+    Vereint mehrere Observables. Emittet aber immer alle aktuellen Werte, wenn sich mindetens ein Observable ändert.
+    Wie bei combineLatest, wird darauf gewartet bis alle observables mindestens einen Wert haben (ohne "latest" kein
+    emit in withLatestFrom). Im Vergleich zu combineLatest nimmt withLatestFrom ein Observable als "Base" an
+    (base.withlatestFrom(child)) und emittet immer, wenn base emittet (vorausgesetzt child hat ein Wert).
+    combineLatestFrom würde auch immer dann emittet, wenn sich nur child ändert.
+
+    <a href="https://rxjs.dev/api/operators/withLatestFrom"><img src="/assets/img/withLatestFrom.png" alt="Graph"
+            style="width: 25vw;"></a>
+
+    <h5>Beispiel</h5>
+
+    <div style="display: flex;">
+        <div>
+            <p>Latest value from quicker second source</p>
+            <div style="overflow: auto;" [innerHTML]="testingWithLastestFrom"></div>
+        </div>
+        <div style="width: 2px; background-color: black; margin: 5px;"></div>
+        <div>
+            <p>Slower second source</p>
+            <div style="overflow: auto;" [innerHTML]="testingWithLastestFrom2"></div>
+        </div>
+    </div>
+</div>
+
+<div class="box-2">
+    <h3>merge</h3>
+
+    <p>Paraphrase: Vereinige mehrere Observables zu einem.</p>
+
+    <h5>Erklärung</h5>
+    <p>Subscribed mehrere Observables und vereint diese in ein Observable. Die Reihenfolge ist dabei egal.</p>
+
+    <h5>Beispiel</h5>
+
+    <div style="overflow: auto;">
+        {{testingMerge}}
+    </div>
+</div>
+
+<div class="box-2">
+    <h3>concat</h3>
+
+    <p>Paraphrase: Führe mehrere Observables nacheinander aus.</p>
+
+    <h5>Erklärung</h5>
+    <p>Eine Folge von Observables, die nacheinander ausgeführt werden. Das vorherige Observable muss terminieren, damit
+        das nächste startet.</p>
+
+    <h5>Beispiel</h5>
+
+    <div style="overflow: auto;">
+        {{testingConcat}}
+    </div>
+</div>
+
+<h2>Creation operators</h2>
+
+<div class="box-2">
+    <h3>ajax</h3>
+
+    <p>Paraphrase: Make an ajax request</p>
+
+    <h5>Erklärung</h5>
+    <p></p>
+
+    <h5>Beispiel 1 - Get response object</h5>
+
+    <div style="overflow: auto;">
+        {{testingAjax}}
+    </div>
+
+
+    <h5>Beispiel 2 - Only get json key of the response</h5>
+
+    <div style="overflow: auto;">
+        {{testingAjaxJson}}
+    </div>
+
+    <h5>Beispiel 3 - Ajax operator with object as input</h5>
+
+
+    <div ngNonBindable>
+        <pre>{{
+            const users = ajax({
+                url: githubUsers,
+                method: 'GET',
+                headers: {
+                    /*some headers*/
+                },
+                body: {
+                    /*in case you need a body*/
+                }
+            });
+}}</pre>
+    </div>
+
+</div>
