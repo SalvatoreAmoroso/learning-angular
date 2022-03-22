@@ -7,6 +7,7 @@ import { TemplateRefDemoComponent } from './Advanced/template-ref/template-ref-d
 import { ViewContainerRefComponent } from './Advanced/view-container-ref/view-container-ref.component';
 import { ViewEncapsulationComponent } from './Advanced/view-encapsulation/view-encapsulation.component';
 import { ContentInsertionComponent } from './ContentInsertion/contentinsertion.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { DependencyInjectionDemoComponent } from './DependencyInjection/components/general/general.component';
 import { DirectivesComponent } from './Directives/directives.component';
 import { EventsComponent } from './EventBinding/events.component';
@@ -15,6 +16,11 @@ import { OtherComponent } from './Other/other.component';
 import { PropBindingComponent } from './PropertyBinding/prop-binding.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: DashboardComponent,
+    pathMatch: 'full'
+  },
   {
     path: 'property-binding',
     component: PropBindingComponent

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PropBindingComponent implements OnInit {
 
   checked: boolean = false
-  color: string = "#505050"
+  color: string = "#707070"
   name: string = ""
 
   constructor() { }
