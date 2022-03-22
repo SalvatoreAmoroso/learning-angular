@@ -15,7 +15,7 @@ export class ViewContainerRefComponent implements AfterViewInit {
   renderComponent = CircleComponent
 
 
-  constructor(private resolver: ComponentFactoryResolver) {
+  constructor(private resolver: ComponentFactoryResolver, private cd: ChangeDetectorRef) {
     this.circleFactory = resolver.resolveComponentFactory(CircleComponent);
   }
 
@@ -23,6 +23,7 @@ export class ViewContainerRefComponent implements AfterViewInit {
     this.addCircle("green")
     this.addCircle("white")
     this.addCircle("red")
+    this.cd.detectChanges();
   }
 
 
