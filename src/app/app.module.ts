@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { EventsComponent } from './events/events.component';
+import { EventsComponent } from './EventBinding/events.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MicrosyntaxComponent } from './Other/microsyntax/microsyntax.component';
 import { IO1Component } from './io1/io1.component';
