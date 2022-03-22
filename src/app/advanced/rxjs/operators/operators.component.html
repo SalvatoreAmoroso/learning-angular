@@ -1,3 +1,5 @@
+<h2>Transformation operators</h2>
+
 <div class="box-2">
     <h3>switchMap</h3>
 
@@ -49,6 +51,8 @@
     {{testingScan2}}
 
 </div>
+
+<h2>Combination operators</h2>
 
 <div class="box-2">
     <h3>combineLatest</h3>
@@ -135,4 +139,47 @@
     <div style="overflow: auto;">
         {{testingConcat}}
     </div>
+</div>
+
+<h2>Creation operators</h2>
+
+<div class="box-2">
+    <h3>ajax</h3>
+
+    <p>Paraphrase: TODO</p>
+
+    <h5>Erklärung</h5>
+    <p></p>
+
+    <h5>Beispiel 1 - Get response object</h5>
+
+    <div style="overflow: auto;">
+        {{testingAjax}}
+    </div>
+
+
+    <h5>Beispiel 2 - Only get json key of the response</h5>
+
+    <div style="overflow: auto;">
+        {{testingAjaxJson}}
+    </div>
+
+    <h5>Beispiel 3 - Ajax operator with object as input</h5>
+
+
+    <div ngNonBindable>
+        <pre>{{
+            const users = ajax({
+                url: githubUsers,
+                method: 'GET',
+                headers: {
+                    /*some headers*/
+                },
+                body: {
+                    /*in case you need a body*/
+                }
+            });
+}}</pre>
+    </div>
+
 </div>

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { combineLatest, concat, fromEvent, interval, merge, Observable, of } from 'rxjs';
 import { map, mapTo, scan, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
+import { ajax, AjaxResponse } from 'rxjs/ajax';
 
 @Component({
   selector: 'app-operators',
@@ -23,6 +24,8 @@ export class OperatorsComponent implements AfterViewInit {
   testingConcat: string[] = [];
   testingWithLastestFrom: string = "";
   testingWithLastestFrom2: string = "";
+  testingAjax: string = "";
+  testingAjaxJson: string = "";
 
   constructor() {
     this.switchMapExample();
@@ -31,6 +34,8 @@ export class OperatorsComponent implements AfterViewInit {
     this.mergeExample();
     this.concatExample();
     this.withLatestFromExample();
+    this.ajaxExample();
+    this.ajaxExample2();
   }
 
   ngAfterViewInit(): void {
@@ -144,5 +149,27 @@ export class OperatorsComponent implements AfterViewInit {
 
     example.subscribe(val => this.testingWithLastestFrom += val);
     example2.subscribe(val => this.testingWithLastestFrom2 += val);
+  }
+
+  private ajaxExample() {
+    const githubUsers = `https://api.github.com/users?per_page=1`;
+
+    const users: Observable<AjaxResponse> = ajax(githubUsers);
+
+    users.subscribe(
+      res => this.testingAjax = JSON.stringify(res),
+      err => this.testingAjax = err
+    )
+  }
+
+  private ajaxExample2() {
+    const githubUsers = `https://api.github.com/users?per_page=1`;
+
+    const users: Observable<AjaxResponse> = ajax.getJSON(githubUsers);
+
+    users.subscribe(
+      res => this.testingAjaxJson = JSON.stringify(res),
+      err => this.testingAjaxJson = err
+    )
   }
 }
