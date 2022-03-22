@@ -3,7 +3,7 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
 @Directive({
   selector: '[chLowerCase]'
 })
-export class LowerCaseDirectiveDirective {
+export class LowerCaseDirective {
 
   @HostBinding() value = "";
   @HostListener("change", ["$event"]) onChange(event: any) {

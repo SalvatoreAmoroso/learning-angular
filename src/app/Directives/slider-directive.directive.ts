@@ -5,7 +5,7 @@ declare var jQuery: any;
 @Directive({
   selector: '[chSlider]'
 })
-export class SliderDirectiveDirective {
+export class SliderDirective {
 
   sliderRef: any;
   @Input() value: number;

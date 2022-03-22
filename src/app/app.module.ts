@@ -13,8 +13,8 @@ import { PanelModule } from './ContentInsertion/panel.module';
 import { TabModule } from './ContentInsertion/tabs/tab.module';
 import { DirectivesComponent } from './Directives/directives.component';
 import { BorderDirective } from './Directives/border.directive';
-import { LowerCaseDirectiveDirective } from './Directives/lower-case-directive.directive';
-import { SliderDirectiveDirective } from './Directives/slider-directive.directive';
+import { LowerCaseDirective } from './Directives/lower-case-directive.directive';
+import { SliderDirective } from './Directives/slider-directive.directive';
 import { PanelComponent } from './Directives/panel/panel.component';
 import { AccordionDirective } from './Directives/panel/accordion.directive';
 import { PanelDemoComponent } from './Directives/panel-demo/panel-demo.component';
@@ -54,8 +54,8 @@ import { LocalVarComponent } from './Other/localvar/localvar.component';
     Io2InnerComponent,
     DirectivesComponent,
     BorderDirective,
-    LowerCaseDirectiveDirective,
-    SliderDirectiveDirective,
+    LowerCaseDirective,
+    SliderDirective,
     PanelComponent,
     AccordionDirective,
     PanelDemoComponent,
