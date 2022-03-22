@@ -30,7 +30,7 @@ import { StandardDirectivesComponent } from './StandardFunctions/standard-direct
 import { PipesComponent } from './StandardFunctions/pipes/pipes.component';
 import { CentimeterPipe } from './StandardFunctions/pipes/centimeter.pipe';
 import { PureVsImpurePipe } from './StandardFunctions/pipes/pure-vs-impure.pipe';
-import { DependencyInjectionModule } from './dependency-injection/dependency-injection.module';
+import { DependencyInjectionModule } from './DependencyInjection/dependency-injection.module';
 import { FormsExampleModule } from './Forms/forms-example.module';
 import { AppRoutingComponents, AppRoutingModule } from './Routing/app-routing.module';
 import { DashboardComponent } from './Routing/dashboard/dashboard.component';
