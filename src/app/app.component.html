@@ -1,24 +1,38 @@
 <title>Learning Angular</title>
 
-<app-tabs>
-    <app-tab title="Property Binding">
-        <app-prop-binding></app-prop-binding>
-    </app-tab>
-    <app-tab title="Event Binding">
-        <app-events> </app-events>
-    </app-tab>
-    <app-tab title="Other">
-        <app-other></app-other>
-    </app-tab>
-    <app-tab title="Input Output Binding">
-        <app-input-output-binding></app-input-output-binding>
-    </app-tab>
-    <app-tab title="Content Insertion">
-        <app-contentinsertion></app-contentinsertion>
-    </app-tab>
-    <app-tab title="Directives">
-        <app-directives></app-directives>
-    </app-tab>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/property-binding">Property Binding</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/event-binding">Event Binding</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/input-output-binding">Input/Output Binding</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/other">Other</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/content-insertion">Content Insertion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/directives">Directives</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/routing">Routing</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="content">
+    <router-outlet></router-outlet>
+</div>
+
+<!-- <app-tabs>
     <app-tab title="Advanced">
         <app-tabs>
             <app-tab title="ViewEncapsulation">
@@ -78,4 +92,4 @@
     <app-tab title="Routing">
         <app-routing></app-routing>
     </app-tab>
-</app-tabs>
+</app-tabs> -->

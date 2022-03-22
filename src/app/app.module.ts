@@ -32,7 +32,7 @@ import { CentimeterPipe } from './StandardFunctions/pipes/centimeter.pipe';
 import { PureVsImpurePipe } from './StandardFunctions/pipes/pure-vs-impure.pipe';
 import { DependencyInjectionModule } from './DependencyInjection/dependency-injection.module';
 import { FormsExampleModule } from './Forms/forms-example.module';
-import { AppRoutingComponents, AppRoutingModule } from './Routing/app-routing.module';
+import { AppRoutingComponents, RoutingExampleRoutingModule } from './Routing/routing.module';
 import { DashboardComponent } from './Routing/dashboard/dashboard.component';
 import { SettingsComponent } from './Routing/settings/settings.component';
 import { AboutComponent } from './Routing/about/about.component';
@@ -43,7 +43,7 @@ import { PropBindingComponent } from './PropertyBinding/prop-binding.component';
 import { OtherComponent } from './Other/other.component';
 import { LocalVarComponent } from './Other/localvar/localvar.component';
 import { InputOutputBindingComponent } from './InputOutputBinding/input-output-binding.component';
-
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,7 +90,7 @@ import { InputOutputBindingComponent } from './InputOutputBinding/input-output-b
     OtherComponent,
     InputOutputBindingComponent
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule, RoutingExampleRoutingModule, AppRoutingModule],
   providers: [], //Define global services here as a singleton (RootInjector)
   bootstrap: [AppComponent]
 })

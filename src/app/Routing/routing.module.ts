@@ -6,15 +6,22 @@ import { RoutingComponent } from './routing.component';
 import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'about', component: AboutComponent }
+  {
+    path: 'routing',
+    component: RoutingComponent,
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'settings', component: SettingsComponent },
+      { path: 'about', component: AboutComponent }
+    ]
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class RoutingExampleRoutingModule { }
 
 export const AppRoutingComponents = [DashboardComponent, SettingsComponent, AboutComponent, RoutingComponent];
