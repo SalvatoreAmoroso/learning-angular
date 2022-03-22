@@ -23,6 +23,10 @@
                 <a class="nav-link" routerLink="/directives" routerLinkActive="active">Directives</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" routerLink="/dependency-injection" routerLinkActive="active">Dependency
+                    Injection</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" routerLink="/routing" routerLinkActive="active">Routing</a>
             </li>
             <li class="nav-item">
@@ -36,21 +40,13 @@
     <router-outlet></router-outlet>
 </div>
 
-<!-- <app-tabs>
+<hr>
+<h3>Old Navbar:</h3>
+<hr>
+
+<app-tabs>
     <app-tab title="Advanced">
         <app-tabs>
-            <app-tab title="ViewEncapsulation">
-                <app-get-some-css></app-get-some-css>
-            </app-tab>
-            <app-tab title="TemplateRef">
-                <app-template-ref-demo></app-template-ref-demo>
-            </app-tab>
-            <app-tab title="ViewContainerRef & ComponentFactory">
-                <app-view-container-ref></app-view-container-ref>
-            </app-tab>
-            <app-tab title="Embedded View">
-                <app-repeater-demo></app-repeater-demo>
-            </app-tab>
             <app-tab title="Change Detection [Performance Boost]">
                 <app-tabs>
                     <app-tab title="Nicht optimiert">
@@ -60,9 +56,6 @@
                         <app-change-detection-performance-optimized></app-change-detection-performance-optimized>
                     </app-tab>
                 </app-tabs>
-            </app-tab>
-            <app-tab title="RxJS">
-                <app-rxjs></app-rxjs>
             </app-tab>
         </app-tabs>
     </app-tab>
@@ -76,13 +69,6 @@
             </app-tab>
         </app-tabs>
     </app-tab>
-    <app-tab title="Dependency Injection">
-        <app-tabs>
-            <app-tab title="General">
-                <di-general></di-general>
-            </app-tab>
-        </app-tabs>
-    </app-tab>
     <app-tab title="Forms">
         <app-tabs>
             <app-tab title="Template-driven">
@@ -93,4 +79,4 @@
             </app-tab>
         </app-tabs>
     </app-tab>
-</app-tabs> -->
+</app-tabs>

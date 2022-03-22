@@ -45,6 +45,7 @@ import { LocalVarComponent } from './Other/localvar/localvar.component';
 import { InputOutputBindingComponent } from './InputOutputBinding/input-output-binding.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AdvancedComponent } from './Advanced/advanced.component';
+import { DependencyInjectionDemoComponent } from './DependencyInjection/components/general/general.component';
 @NgModule({
   declarations: [
     AppComponent,

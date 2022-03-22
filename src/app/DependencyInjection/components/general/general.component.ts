@@ -6,7 +6,7 @@ import { DataServiceOne, DataServiceThree } from '../../services/data-service.se
   templateUrl: './general.component.html',
   styleUrls: ['./general.component.scss']
 })
-export class GeneralComponent {
+export class DependencyInjectionDemoComponent {
 
   friends: any[] = [];
   friendsThree: any[] = [];

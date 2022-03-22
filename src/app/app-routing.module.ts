@@ -7,6 +7,7 @@ import { TemplateRefDemoComponent } from './Advanced/template-ref/template-ref-d
 import { ViewContainerRefComponent } from './Advanced/view-container-ref/view-container-ref.component';
 import { ViewEncapsulationComponent } from './Advanced/view-encapsulation/view-encapsulation.component';
 import { ContentInsertionComponent } from './ContentInsertion/contentinsertion.component';
+import { DependencyInjectionDemoComponent } from './DependencyInjection/components/general/general.component';
 import { DirectivesComponent } from './Directives/directives.component';
 import { EventsComponent } from './EventBinding/events.component';
 import { InputOutputBindingComponent } from './InputOutputBinding/input-output-binding.component';
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'content-insertion',
     component: ContentInsertionComponent
+  },
+  {
+    path: 'dependency-injection',
+    component: DependencyInjectionDemoComponent
   },
   {
     path: 'directives',

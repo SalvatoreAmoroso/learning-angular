@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GeneralComponent } from './components/general/general.component';
+import { DependencyInjectionDemoComponent } from './components/general/general.component';
 import { DataServiceOne } from './services/data-service.service';
 import { ComponentBasedServicesComponent } from './components/component-based-services/component-based-services.component';
 
 @NgModule({
   declarations: [
-    GeneralComponent,
+    DependencyInjectionDemoComponent,
     ComponentBasedServicesComponent,
   ],
   imports: [
@@ -16,7 +16,7 @@ import { ComponentBasedServicesComponent } from './components/component-based-se
     DataServiceOne //Define all providers for the di system
   ],
   exports: [
-    GeneralComponent
+    DependencyInjectionDemoComponent
   ]
 })
 export class DependencyInjectionModule { }

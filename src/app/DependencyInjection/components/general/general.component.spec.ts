@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GeneralComponent } from './general.component';
+import { DependencyInjectionDemoComponent } from './general.component';
 
 describe('GeneralComponent', () => {
-  let component: GeneralComponent;
-  let fixture: ComponentFixture<GeneralComponent>;
+  let component: DependencyInjectionDemoComponent;
+  let fixture: ComponentFixture<DependencyInjectionDemoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GeneralComponent ]
+      declarations: [DependencyInjectionDemoComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GeneralComponent);
+    fixture = TestBed.createComponent(DependencyInjectionDemoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
