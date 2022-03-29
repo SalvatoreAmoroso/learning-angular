@@ -92,7 +92,7 @@ import { StandardFunctionsComponent } from './StandardFunctions/standard-functio
     OtherComponent,
     InputOutputBindingComponent,
     AdvancedComponent,
-    StandardFunctionsComponent
+    StandardFunctionsComponent,
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule, RoutingExampleRoutingModule, AppRoutingModule],
   providers: [], //Define global services here as a singleton (RootInjector)

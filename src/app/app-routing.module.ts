@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DependencyInjectionDemoComponent } from './DependencyInjection/components/general/general.component';
 import { DirectivesComponent } from './Directives/directives.component';
 import { EventsComponent } from './EventBinding/events.component';
+import { FormsComponent } from './Forms/forms.component';
 import { InputOutputBindingComponent } from './InputOutputBinding/input-output-binding.component';
 import { OtherComponent } from './Other/other.component';
 import { PropBindingComponent } from './PropertyBinding/prop-binding.component';
@@ -89,6 +90,10 @@ const routes: Routes = [
   {
     path: 'standard-functions',
     component: StandardFunctionsComponent
+  },
+  {
+    path: 'forms',
+    component: FormsComponent
   }
 ];
 

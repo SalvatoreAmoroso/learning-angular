@@ -31,6 +31,9 @@
                 <a class="nav-link" routerLink="/standard-functions" routerLinkActive="active">Standard Functions</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" routerLink="/forms" routerLinkActive="active">Forms</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" routerLink="/routing" routerLinkActive="active">Routing</a>
             </li>
             <li class="nav-item">
@@ -43,16 +46,3 @@
 <div class="content">
     <router-outlet></router-outlet>
 </div>
-
-<app-tabs>
-    <app-tab title="Forms">
-        <app-tabs>
-            <app-tab title="Template-driven">
-                <app-first-form></app-first-form>
-            </app-tab>
-            <app-tab title="ReactiveForms">
-                <app-reactive-form></app-reactive-form>
-            </app-tab>
-        </app-tabs>
-    </app-tab>
-</app-tabs>
