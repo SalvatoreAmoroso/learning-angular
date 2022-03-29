@@ -1,0 +1,17 @@
+<div class="box-1">
+  <h1>Input/Output - Part 1</h1>
+  <div class="box-2">
+    <h2>Input/Output Binding</h2>
+    Outer Variable: {{ varDeclaredOutside }}
+    <app-io1-inner [passedVar]="varDeclaredOutside" (changeEvent)="innerComponentChanged($event)"></app-io1-inner>
+  </div>
+
+  <div class="box-2">
+    <h2>Input/Output Binding (Syntactic sugar)</h2>
+    Outer Variable: {{ varDeclaredOutside }}
+    <app-io1-inner [(passedVar)]="varDeclaredOutside" #test></app-io1-inner>
+
+    <h3>Access Child API with local var</h3>
+    <button (click)="test.reset()">reset</button>
+  </div>
+</div>

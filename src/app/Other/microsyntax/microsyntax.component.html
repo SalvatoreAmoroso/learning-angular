@@ -1,0 +1,18 @@
+<div class="box-2">
+  <h2>Microsyntax</h2>
+  <ul>
+
+    <h3>Kurzschreibweise mit dem * Operator</h3>
+
+    <div *ngFor="let person of persons">
+      <li>{{ person.name }} ({{ person.age }})</li>
+    </div>
+
+
+    <h3>Lange Schreibweise ohne * Operator</h3>
+
+    <ng-template ngFor let-person [ngForOf]="persons">
+      <li>{{ person.name }} ({{ person.age }})</li>
+    </ng-template>
+  </ul>
+</div>

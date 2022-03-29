@@ -1,0 +1,25 @@
+<div class="box-2">
+
+    <app-tabs>
+        <app-tab title="Nicht optimiert">
+            <h2>Nicht optimierte Variante</h2>
+            <aside>Hier wird die ChangeDetection bei jedem Tastendruck ausgelöst!</aside>
+
+            <ch-contact-list [contacts]="contacts" (onSelect)="contactSelected($event)">
+            </ch-contact-list>
+            <h3>Kontakt bearbeiten</h3>
+            <form>
+                <label>Name</label>
+                <input type="text" name="name" [(ngModel)]="contactName">
+                <label>Anschrift</label>
+                <input type="text" name="address" [(ngModel)]="contactAddress">
+                <button (click)="editContact()">Speichern</button>
+                <button (click)="createContact()">Neu anlegen</button>
+            </form>
+
+        </app-tab>
+        <app-tab title="Optimiert">
+            <app-change-detection-performance-optimized></app-change-detection-performance-optimized>
+        </app-tab>
+    </app-tabs>
+</div>

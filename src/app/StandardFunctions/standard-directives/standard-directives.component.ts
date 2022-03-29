@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from 'src/app/microsyntax/person';
+import { Person } from 'src/app/Other/microsyntax/person';
 
 interface Player {
   name: string;

@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstFormComponent } from './first-form/first-form.component';
 import { APPLICATION_VALIDATORS } from './app-validators.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { FormsComponent } from './forms.component';
+import { TabModule } from '../ContentInsertion/tabs/tab.module';
 
 
 
@@ -11,12 +13,14 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
   declarations: [
     FirstFormComponent,
     ReactiveFormComponent,
-    APPLICATION_VALIDATORS
+    APPLICATION_VALIDATORS,
+    FormsComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TabModule
   ],
   exports: [
     FirstFormComponent,

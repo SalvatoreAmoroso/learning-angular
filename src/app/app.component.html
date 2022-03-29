@@ -1,90 +1,48 @@
 <title>Learning Angular</title>
 
-<app-tabs>
-    <app-tab title="Property Binding">
-        <app-tabs>
-            <app-tab title="One-Way">
-                <app-oneway-prop></app-oneway-prop>
-            </app-tab>
-            <app-tab title="Two-Way">
-                <app-twoway></app-twoway>
-            </app-tab>
-        </app-tabs>
-    </app-tab>
-    <app-tab title="Event Bindings">
-        <app-events> </app-events>
-    </app-tab>
-    <app-tab title="Misc">
-        <app-localvar></app-localvar>
-        <app-microsyntax></app-microsyntax>
-    </app-tab>
-    <app-tab title="Input Output Bindings">
-        <app-io1></app-io1>
-        <app-io2></app-io2>
-    </app-tab>
-    <app-tab title="Content Insertion">
-        <app-contentinsertion></app-contentinsertion>
-    </app-tab>
-    <app-tab title="Directives">
-        <app-directives></app-directives>
-    </app-tab>
-    <app-tab title="Advanced">
-        <app-tabs>
-            <app-tab title="ViewEncapsulation">
-                <app-get-some-css></app-get-some-css>
-            </app-tab>
-            <app-tab title="TemplateRef">
-                <app-template-ref-demo></app-template-ref-demo>
-            </app-tab>
-            <app-tab title="ViewContainerRef & ComponentFactory">
-                <app-view-container-ref></app-view-container-ref>
-            </app-tab>
-            <app-tab title="Embedded View">
-                <app-repeater-demo></app-repeater-demo>
-            </app-tab>
-            <app-tab title="Change Detection [Performance Boost]">
-                <app-tabs>
-                    <app-tab title="Nicht optimiert">
-                        <app-change-detection-performance></app-change-detection-performance>
-                    </app-tab>
-                    <app-tab title="Optimiert">
-                        <app-change-detection-performance-optimized></app-change-detection-performance-optimized>
-                    </app-tab>
-                </app-tabs>
-            </app-tab>
-            <app-tab title="RxJS">
-                <app-rxjs></app-rxjs>
-            </app-tab>
-        </app-tabs>
-    </app-tab>
-    <app-tab title="Standard Functions">
-        <app-tabs>
-            <app-tab title="Standard Directives">
-                <app-standard-directives></app-standard-directives>
-            </app-tab>
-            <app-tab title="Pipes">
-                <app-pipes></app-pipes>
-            </app-tab>
-        </app-tabs>
-    </app-tab>
-    <app-tab title="Dependency Injection">
-        <app-tabs>
-            <app-tab title="General">
-                <di-general></di-general>
-            </app-tab>
-        </app-tabs>
-    </app-tab>
-    <app-tab title="Forms">
-        <app-tabs>
-            <app-tab title="Template-driven">
-                <app-first-form></app-first-form>
-            </app-tab>
-            <app-tab title="ReactiveForms">
-                <app-reactive-form></app-reactive-form>
-            </app-tab>
-        </app-tabs>
-    </app-tab>
-    <app-tab title="Routing">
-        <app-routing></app-routing>
-    </app-tab>
-</app-tabs>
+<nav class="navbar navbar-expand-lg navbar-light bg-blue">
+    <a class="navbar-brand" routerLink="/">Welcome</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/property-binding" routerLinkActive="active">Property Binding</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/event-binding" routerLinkActive="active">Event Binding</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/input-output-binding" routerLinkActive="active">Input/Output
+                    Binding</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/other" routerLinkActive="active">Other</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/content-insertion" routerLinkActive="active">Content Insertion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/directives" routerLinkActive="active">Directives</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/dependency-injection" routerLinkActive="active">Dependency
+                    Injection</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/standard-functions" routerLinkActive="active">Standard Functions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/forms" routerLinkActive="active">Forms</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/routing" routerLinkActive="active">Routing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/advanced" routerLinkActive="active">Advanced</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="content">
+    <router-outlet></router-outlet>
+</div>
