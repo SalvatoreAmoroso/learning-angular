@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdvancedComponent } from './Advanced/advanced.component';
+import { ChangeDetectionPerformanceComponent } from './Advanced/change-detection-performance/change-detection-performance.component';
 import { RepeaterDemoComponent } from './Advanced/embedded-view/repeater-demo.component';
 import { RxJsComponent } from './Advanced/rxjs/rxjs.component';
 import { TemplateRefDemoComponent } from './Advanced/template-ref/template-ref-demo/template-ref-demo.component';
@@ -77,6 +78,10 @@ const routes: Routes = [
       {
         path: 'rxjs',
         component: RxJsComponent
+      },
+      {
+        path: 'change-detection',
+        component: ChangeDetectionPerformanceComponent
       }
     ]
   }
