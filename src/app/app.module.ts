@@ -45,7 +45,7 @@ import { LocalVarComponent } from './Other/localvar/localvar.component';
 import { InputOutputBindingComponent } from './InputOutputBinding/input-output-binding.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AdvancedComponent } from './Advanced/advanced.component';
-import { DependencyInjectionDemoComponent } from './DependencyInjection/components/general/general.component';
+import { StandardFunctionsComponent } from './StandardFunctions/standard-functions.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,7 +91,8 @@ import { DependencyInjectionDemoComponent } from './DependencyInjection/componen
     PropBindingComponent,
     OtherComponent,
     InputOutputBindingComponent,
-    AdvancedComponent
+    AdvancedComponent,
+    StandardFunctionsComponent
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule, RoutingExampleRoutingModule, AppRoutingModule],
   providers: [], //Define global services here as a singleton (RootInjector)

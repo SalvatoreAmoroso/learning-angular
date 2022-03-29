@@ -15,6 +15,7 @@ import { EventsComponent } from './EventBinding/events.component';
 import { InputOutputBindingComponent } from './InputOutputBinding/input-output-binding.component';
 import { OtherComponent } from './Other/other.component';
 import { PropBindingComponent } from './PropertyBinding/prop-binding.component';
+import { StandardFunctionsComponent } from './StandardFunctions/standard-functions.component';
 
 const routes: Routes = [
   {
@@ -84,6 +85,10 @@ const routes: Routes = [
         component: ChangeDetectionPerformanceComponent
       }
     ]
+  },
+  {
+    path: 'standard-functions',
+    component: StandardFunctionsComponent
   }
 ];
 
