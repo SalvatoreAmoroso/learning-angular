@@ -1,4 +1,4 @@
-import { AccordionDirective } from './accordion.directive';
+import { AccordionDirective } from './panel/accordion.directive';
 
 describe('AccordionDirective', () => {
   it('should create an instance', () => {

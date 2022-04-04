@@ -1,20 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { LocalvarComponent } from './localvar.component';
+import { LocalVarComponent } from './localvar.component';
 
 describe('LocalvarComponent', () => {
-  let component: LocalvarComponent;
-  let fixture: ComponentFixture<LocalvarComponent>;
+  let component: LocalVarComponent;
+  let fixture: ComponentFixture<LocalVarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LocalvarComponent ]
-    })
-    .compileComponents();
+      declarations: [LocalVarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LocalvarComponent);
+    fixture = TestBed.createComponent(LocalVarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
