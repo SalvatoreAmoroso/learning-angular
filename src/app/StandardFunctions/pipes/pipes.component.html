@@ -1,121 +1,118 @@
 <div class="box-1">
     <h1>Standard Pipes</h1>
 
-    <h2>Strings transformieren</h2>
+    <div class="box-2">
+        <h2>Strings transformieren</h2>
 
-    <h3>Uppercase Pipe:</h3>
-
-    <h4>{{header | uppercase }}</h4>
-    <span>{{email | lowercase }}</span>
-
-    <hr>
-
-    <h2>Zahlen formatieren</h2>
-
-    <h3>Date Pipe:</h3>
-
-    <p><b>{{ currentDate | date }}</b></p>
-    <p><b>{{ currentDate | date:'shortDate' }}</b> (shortDate)</p>
-    <p><b>{{ currentDate | date:'mediumDate' }}</b> (mediumDate / default)</p>
-    <p><b>{{ currentDate | date:'longDate' }}</b> (longDate)</p>
-    <p><b>{{ currentDate | date:'fullDate' }}</b> (fullDate)</p>
-    <p><b>{{ currentDate | date:'shortTime' }}</b> (shortTime)</p>
-    <p><b>{{ currentDate | date:'mediumTime' }}</b> (mediumTime)</p>
-    <p><b>{{ currentDate | date:'short' }}</b> (short)</p>
-    <p><b>{{ currentDate | date:'medium' }}</b> (medium)</p>
-    <p><b>{{ currentDate | date:'long' }}</b> (long)</p>
-    <p><b>{{ currentDate | date:'full' }}</b> (full)</p>
-    <p><b>{{ currentDate | date:'dd.MM.y' }}</b> (dd.MM.y)</p>
-    <p><b>{{ currentDate | date:'HH:mm Z' }}</b> (HH:mm Z)</p>
-    <p><b>{{ currentDate | date:'HH:mm z' }}</b> (HH:mm z)</p>
-
-
-    <h4>DateString formatieren</h4>
-
-    <p><b>{{ dateString | date:'hh:mm a Z' }}</b> (hh:mm a Z)</p>
-    <p><b>{{ dateString | date:'hh:mm EEE EEEE Z' }}</b> (hh:mm EEE EEEE Z)</p>
-
-
-    <p><b>{{ dateString | date:'HH:mm:ss aa EEEE z G' }}</b> (HH:mm:ss aaaa EEEE z)</p>
-
-    {{ currentDate | date:'dd.MM.yyyy' }}
-
-
-
-    <h3>Decimal Pipe:</h3>
-
-    <h4>PI unformatiert:</h4>
-    <p>{{ pi }}</p>
-
-
-    <h4>PI formatiert:</h4>
-    <p>{{ pi | number:'1.1-5' }}</p>
-
-    <p>{{ pi | number:'2.1-2' }}</p>
-
-
-    <h3>Währung darstellen:</h3>
-
-    <p>{{price | currency:'EUR' }}</p>
-    <p>{{price | currency:'EUR':true:'2.2-2' }}</p>
-
-    <h4>Prozentzahlen formattieren:</h4>
-
-    <p>{{completed | percent}}</p>
-    <p>{{completed | percent:'.2'}}</p>
-    <p>{{completed | percent:'.3'}}</p>
-
-    <hr>
-
-    <h2>JSON Pipe:</h2>
-    <pre>{{currentUser | json}}</pre>
-    <pre>{{currentUser | json | lowercase}}</pre>
-
-    <hr>
-
-
-    <h2>Key-Value Pipe</h2>
-    <pre>{{currentUser | keyvalue:dontSort | json}}</pre>
-
-    <div *ngFor="let entry of currentUser | keyvalue:dontSort">
-        {{entry.key}}: {{entry.value}}
+        <div>{{header | uppercase }}</div>
+        <div>{{email | lowercase }}</div>
     </div>
 
+    <div class="box-2">
+        <h2>Date Pipe</h2>
 
-    <h2>Asynchrone Daten darstellen</h2>
+        <p>{{ currentDate | date }}</p>
+        <p>{{ currentDate | date:'shortDate' }} (shortDate)</p>
+        <p>{{ currentDate | date:'mediumDate' }} (mediumDate / default)</p>
+        <p>{{ currentDate | date:'longDate' }} (longDate)</p>
+        <p>{{ currentDate | date:'fullDate' }} (fullDate)</p>
+        <p>{{ currentDate | date:'shortTime' }} (shortTime)</p>
+        <p>{{ currentDate | date:'mediumTime' }} (mediumTime)</p>
+        <p>{{ currentDate | date:'short' }} (short)</p>
+        <p>{{ currentDate | date:'medium' }} (medium)</p>
+        <p>{{ currentDate | date:'long' }} (long)</p>
+        <p>{{ currentDate | date:'full' }} (full)</p>
+        <p>{{ currentDate | date:'dd.MM.y' }} (dd.MM.y)</p>
+        <p>{{ currentDate | date:'HH:mm Z' }} (HH:mm Z)</p>
+        <p>{{ currentDate | date:'HH:mm z' }} (HH:mm z)</p>
 
-    <h3>Promises</h3>
-    <p>{{promise | async}}</p>
+    </div>
 
-    <h3>Observables</h3>
-    <p>{{counter | async}}</p>
+    <div class="box-2">
+        <h2>DateString Pipe</h2>
 
-    <hr>
+        <p>{{ dateString | date:'hh:mm a Z' }} (hh:mm a Z)</p>
+        <p>{{ dateString | date:'hh:mm EEE EEEE Z' }} (hh:mm EEE EEEE Z)</p>
 
-    <h2>Nur Teile eines Strings darstellen</h2>
-    <p>{{'Hello World' | slice:6 }}</p>
 
-    <h2>Nur Teile eines Arrays darstellen</h2>
+        <p>{{ dateString | date:'HH:mm:ss aa EEEE z G' }} (HH:mm:ss aaaa EEEE z)</p>
 
-    <h4>Alle Werte ab dem 5. Wert darstellen</h4>
-    <ul>
-        <li *ngFor="let number of numbers | slice:5"> {{number}}</li>
-    </ul>
+        {{ currentDate | date:'dd.MM.yyyy' }}
+    </div>
 
-    <h4>Nur die ersten 5 Werte darstellen</h4>
-    <ul>
-        <li *ngFor="let number of numbers | slice:0:5"> {{number}}</li>
-    </ul>
+    <div class="box-2">
+        <h2>Decimal Pipe</h2>
 
-    <h4>Die letzten 3 Werte darstellen</h4>
-    <ul>
-        <li *ngFor="let number of numbers | slice:-3"> {{number}}</li>
-    </ul>
+        <p>{{ pi }}</p>
+        <p>{{ pi | number:'1.1-5' }}</p>
+        <p>{{ pi | number:'2.1-2' }}</p>
 
-    <h4>Vom fünftletzten bis zum drittletzten Wert darstellen</h4>
-    <ul>
-        <li *ngFor="let number of numbers | slice:-5:-2"> {{number}}</li>
-    </ul>
+
+        <h2>Currency Pipe</h2>
+
+        <p>{{price | currency:'EUR' }}</p>
+        <p>{{price | currency:'EUR':true:'2.2-2' }}</p>
+
+        <h2>Percent Pipe</h2>
+
+        <p>{{completed | percent}}</p>
+        <p>{{completed | percent:'.2'}}</p>
+        <p>{{completed | percent:'.3'}}</p>
+    </div>
+
+    <div class="box-2">
+        <h2>JSON Pipe:</h2>
+        <pre>{{currentUser | json}}</pre>
+        <pre>{{currentUser | json | lowercase}}</pre>
+
+    </div>
+
+    <div class="box-2">
+        <h2>Key-Value Pipe</h2>
+        <pre>{{currentUser | keyvalue:dontSort | json}}</pre>
+
+        <div *ngFor="let entry of currentUser | keyvalue:dontSort">
+            {{entry.key}}: {{entry.value}}
+        </div>
+    </div>
+
+    <div class="box-2">
+        <h2>Async Pipe</h2>
+
+        <h4>Promises</h4>
+        <p>{{promise | async}}</p>
+
+        <h4>Observables</h4>
+        <p>{{counter | async}}</p>
+
+    </div>
+
+    <div class="box-2">
+        <h2>Slice Pipe (String)</h2>
+        <p>{{'Hello World' | slice:6 }}</p>
+
+        <h2>Slice Pipe (Array)</h2>
+
+        <h5>Alle Werte ab dem 5. Wert darstellen</h5>
+        <ul>
+            <li *ngFor="let number of numbers | slice:5"> {{number}}</li>
+        </ul>
+
+        <h5>Nur die ersten 5 Werte darstellen</h5>
+        <ul>
+            <li *ngFor="let number of numbers | slice:0:5"> {{number}}</li>
+        </ul>
+
+        <h5>Die letzten 3 Werte darstellen</h5>
+        <ul>
+            <li *ngFor="let number of numbers | slice:-3"> {{number}}</li>
+        </ul>
+
+        <h5>Vom fünftletzten bis zum drittletzten Wert darstellen</h5>
+        <ul>
+            <li *ngFor="let number of numbers | slice:-5:-2"> {{number}}</li>
+        </ul>
+    </div>
 </div>
 
 <div class="box-1">
@@ -140,7 +137,8 @@
 
         <br>Zeichen: {{message | count}}
 
-        <aside>Da strings immutable sind und sich das Objekt ändert, wenn ein neues Zeichen eingegeben wird, funktioniert diese Pipe ganz normal</aside>
+        <aside>Da strings immutable sind und sich das Objekt ändert, wenn ein neues Zeichen eingegeben wird,
+            funktioniert diese Pipe ganz normal</aside>
     </div>
     <div class="box-2">
         <h2>Impure</h2>
@@ -157,7 +155,9 @@
             Anzahl der Freunde: <b>{{friends | count}}</b>
         </div>
 
-        <aside>Bei einer pure pipe würde der Counter nicht aktualisieren, wenn man ein Freund hinzufügt, da das Array Objekt immernoch dasselbe ist und lediglich ein neuer Wert in das Array kommt. Die Pipe muss als impure definiert werden.</aside>
+        <aside>Bei einer pure pipe würde der Counter nicht aktualisieren, wenn man ein Freund hinzufügt, da das Array
+            Objekt immernoch dasselbe ist und lediglich ein neuer Wert in das Array kommt. Die Pipe muss als impure
+            definiert werden.</aside>
     </div>
 
 </div>
