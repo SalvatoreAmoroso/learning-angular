@@ -13,6 +13,7 @@ import { DependencyInjectionDemoComponent } from './DependencyInjection/componen
 import { DirectivesComponent } from './Directives/directives.component';
 import { EventsComponent } from './EventBinding/events.component';
 import { FormsComponent } from './Forms/forms.component';
+import { I18nExampleComponent } from './I18N/i18n-example/i18n-example.component';
 import { InputOutputBindingComponent } from './InputOutputBinding/input-output-binding.component';
 import { OtherComponent } from './Other/other.component';
 import { PropBindingComponent } from './PropertyBinding/prop-binding.component';
@@ -22,35 +23,35 @@ const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'property-binding',
-    component: PropBindingComponent
+    component: PropBindingComponent,
   },
   {
     path: 'event-binding',
-    component: EventsComponent
+    component: EventsComponent,
   },
   {
     path: 'other',
-    component: OtherComponent
+    component: OtherComponent,
   },
   {
     path: 'input-output-binding',
-    component: InputOutputBindingComponent
+    component: InputOutputBindingComponent,
   },
   {
     path: 'content-insertion',
-    component: ContentInsertionComponent
+    component: ContentInsertionComponent,
   },
   {
     path: 'dependency-injection',
-    component: DependencyInjectionDemoComponent
+    component: DependencyInjectionDemoComponent,
   },
   {
     path: 'directives',
-    component: DirectivesComponent
+    component: DirectivesComponent,
   },
   {
     path: 'advanced',
@@ -59,46 +60,50 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'rxjs',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'view-encapsulation',
-        component: ViewEncapsulationComponent
+        component: ViewEncapsulationComponent,
       },
       {
         path: 'template-ref',
-        component: TemplateRefDemoComponent
+        component: TemplateRefDemoComponent,
       },
       {
         path: 'view-container-ref',
-        component: ViewContainerRefComponent
+        component: ViewContainerRefComponent,
       },
       {
         path: 'embedded-view',
-        component: RepeaterDemoComponent
+        component: RepeaterDemoComponent,
       },
       {
         path: 'rxjs',
-        component: RxJsComponent
+        component: RxJsComponent,
       },
       {
         path: 'change-detection',
-        component: ChangeDetectionPerformanceComponent
-      }
-    ]
+        component: ChangeDetectionPerformanceComponent,
+      },
+    ],
   },
   {
     path: 'standard-functions',
-    component: StandardFunctionsComponent
+    component: StandardFunctionsComponent,
   },
   {
     path: 'forms',
-    component: FormsComponent
-  }
+    component: FormsComponent,
+  },
+  {
+    path: 'i18n',
+    component: I18nExampleComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,25 @@
+<div class="box-1">
+    <h1>Preparation</h1>
+    <div class="box-2">
+        <h3><i>i18n</i></h3>
+        <p>This wont be translated</p>
+        <p i18n>But this will.</p>
+        <p i18n="site header|An introduction header for this sample">This has also defined metadata: meaning|description
+        </p>
+        <p i18n="site header|An introduction header for this sample@@customID">This has also defined a custom id:
+            meaning|description@@customId</p>
+        <div class="box">All the metadata will be used to create the SHA1 hash to identify the translation. Therefore
+            metadata allows you to define several translations for the same source text and also deliver some extra
+            information for the translation team.</div>
+    </div>
+
+    <div class="box-2">
+        <h3><i>i18n-attribute</i></h3>
+        <img alt="This is an invalid image and the alt text wont be translated."><br>
+        <img i18n-alt alt="This is an invalid image and the alt text will be translated.">
+    </div>
+</div>
+
+<div class="box-1">
+    <h1>Create translations</h1>
+</div>

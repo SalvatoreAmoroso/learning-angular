@@ -46,6 +46,7 @@ import { InputOutputBindingComponent } from './InputOutputBinding/input-output-b
 import { AppRoutingModule } from './app-routing.module';
 import { AdvancedComponent } from './Advanced/advanced.component';
 import { StandardFunctionsComponent } from './StandardFunctions/standard-functions.component';
+import { I18nExampleComponent } from './I18N/i18n-example/i18n-example.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,6 +94,7 @@ import { StandardFunctionsComponent } from './StandardFunctions/standard-functio
     InputOutputBindingComponent,
     AdvancedComponent,
     StandardFunctionsComponent,
+    I18nExampleComponent,
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, PanelModule, TabModule, DependencyInjectionModule, FormsExampleModule, RoutingExampleRoutingModule, AppRoutingModule],
   providers: [], //Define global services here as a singleton (RootInjector)
