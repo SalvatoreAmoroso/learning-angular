@@ -18,8 +18,34 @@
         <img alt="This is an invalid image and the alt text wont be translated."><br>
         <img i18n-alt alt="This is an invalid image and the alt text will be translated.">
     </div>
+
+    <div class="box-2">
+        <h3>ICU expressions</h3>
+        Syntax: <code>{{ '{' }} component_property, icu_clause, case_statements {{ '}' }}</code>
+
+        <ol>
+            <li>ICU Clause: plural<br>
+                <input type="number" [(ngModel)]="minutes">
+                <div i18n>Updated {minutes, plural, =0 {just now} =1 {one minute ago} other {{{minutes}} minutes
+                    ago}}</div>
+            </li>
+            <li>ICU Clause: select<br>
+                <select class="form-control" [(ngModel)]="gender">
+                    <option value="">--- Bitte auswählen ---</option>
+                    <option *ngFor="let g of genders">{{g}}</option>
+                </select>
+                <span i18n>The author is {gender, select, male {a strong male} female {a beautiful female} other {other}
+                    car
+                    {a car??}}</span>
+            </li>
+        </ol>
+    </div>
 </div>
 
 <div class="box-1">
     <h1>Create translations</h1>
+
+    <div class="box">To create the source language files run
+        <a href="https://angular.io/cli/extract-i18n"><code>ng extract-i18</code></a>
+    </div>
 </div>

@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class I18nExampleComponent implements OnInit {
   price: number = 3.5;
+  minutes: number = 5;
+  gender: string = '';
+  readonly genders: string[] = ['male', 'female', 'other', 'car'];
   constructor() {}
 
   ngOnInit(): void {}
